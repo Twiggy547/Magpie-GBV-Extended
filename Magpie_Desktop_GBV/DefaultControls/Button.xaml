@@ -17,15 +17,16 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="Border" Cursor="Hand" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"
-                            CornerRadius="{DynamicResource ControlCornerRadius}" Style="{DynamicResource HighlightBorder}" BorderBrush="{TemplateBinding BorderBrush}">
+                    <Border x:Name="Border" Cursor="Hand" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"                            
+                            CornerRadius="{DynamicResource ControlCornerRadius}" Style="{DynamicResource HighlightBorder}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}" TargetName="Border" />
                             <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -39,5 +40,5 @@
                 <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}"/>
             </Trigger>
         </Style.Triggers>
-    </Style>
+    </Style>                  
 </ResourceDictionary>

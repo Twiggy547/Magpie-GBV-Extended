@@ -44,7 +44,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
+    <!-- ExtraMetadata -->
     <Style x:Key="ExtraMetadataLogoPath" TargetType="TextBlock">
         <Setter Property="Text">
             <Setter.Value>
@@ -176,7 +176,7 @@
                                     </Style>
                                 </FadeImage.Style>
                             </FadeImage>
-
+                            
                             <Grid Grid.Column="1"  Grid.Row="0" Margin="0" Name="TitleGrid"
                                   Width="{Binding ElementName=DetailsPanel, Path=ActualWidth}"
                                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
@@ -332,7 +332,7 @@
                                     </TextBlock.Style>
                                 </TextBlock>
                             </Grid>
-
+                            <!-- Background Mode? -->
                             <Grid Grid.Row="1" Grid.RowSpan="2" Tag="{DynamicResource BGModeOn}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -424,7 +424,7 @@
                                     </Border.Style>
                                 </Border>
                             </Grid>
-
+                            <!-- Main Bar -->
                             <Grid Name="ControlsBar" Grid.Column="1" Grid.Row="1" MaxWidth="{Binding ElementName=DetailsPanel, Path=ActualWidth}"
                                   HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Transparent">
                                 <Grid.ColumnDefinitions>
@@ -474,10 +474,10 @@
                                         <Label Name="PART_ElemPlayTime" Content="&#x23F3;"/>
                                         <TextBlock Name="PART_TextPlayTime"/>
                                     </StackPanel>
-                                    <StackPanel Tag="{DynamicResource Htlb_EnableIntegrationInCustomTheme}">
-                                        <StackPanel Orientation="Horizontal" Tag="{DynamicResource Htlb_HasData}" ToolTip="{DynamicResource LOCHowLongToBeat}">
+                                    <StackPanel Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
+                                        <StackPanel Orientation="Horizontal" Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}" ToolTip="{DynamicResource LOCHowLongToBeat}">
                                             <Label Content="&#x23F1;"/>
-                                            <TextBlock Text="{DynamicResource Htlb_TimeToBeatFormat}"/>
+                                            <TextBlock Text="{PluginSettings Plugin=HowLongToBeat, Path=TimeToBeatFormat}"/>
                                             <StackPanel.Style>
                                                 <Style>
                                                     <Setter Property="Control.Visibility" Value="Collapsed"/>
@@ -504,7 +504,7 @@
                                         <Label Name="PART_ElemLastPlayed" Content="&#xE163;"/>
                                         <TextBlock Name="PART_TextLastActivity"/>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal" Tag="{DynamicResource Sc_HasData}"
+                                    <StackPanel Orientation="Horizontal" Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}"
                                                 ToolTip="{DynamicResource LOCCommonLinksAchievements}">
                                         <StackPanel.Style>
                                             <Style>
@@ -516,7 +516,7 @@
                                                 </Style.Triggers>
                                             </Style>
                                         </StackPanel.Style>
-                                        <Label Content="&#x1F396;" Tag="{DynamicResource Sc_PercentageUnlocked}">
+                                        <Label Content="&#x1F396;" Tag="{PluginSettings Plugin=SuccessStory, Path=Percent}">
                                             <Label.Style>
                                                 <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
                                                     <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}"/>
@@ -539,10 +539,10 @@
                                                 </Style>
                                             </Label.Style>
                                         </Label>
-                                        <TextBlock Tag="{DynamicResource Sc_PercentageUnlocked}">
-                                            <Run Text="{DynamicResource Sc_UnlockedString}"/>
+                                        <TextBlock Tag="{PluginSettings Plugin=SuccessStory, Path=Percent}">
+                                            <Run Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked}"/>
                                             <Run Text=" / "/>
-                                            <Run Text="{DynamicResource Sc_TotalString}"/>
+                                            <Run Text="{PluginSettings Plugin=SuccessStory, Path=Total}"/>
                                             <TextBlock.Style>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
                                                     <Setter Property="VerticalAlignment" Value="Center"/>
@@ -574,12 +574,14 @@
                                             MinWidth="80" Style="{DynamicResource ContextButton}" FontSize="{DynamicResource FontSizeLarger}"/>
                                     <Button Name="PART_ButtonMoreActions"
                                                 Content="&#xE10C;" FontFamily="{DynamicResource SymbolFont}"/>
+                                    <Button Name="PART_CustomScButton" Content="&#x1F396;" ToolTip="{DynamicResource LOCSuccessStory}"
+                                                    FontFamily="{DynamicResource SymbolFont}" />
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
                                     <StackPanel Orientation="Horizontal">
-                                        <Grid Tag="{DynamicResource Htlb_EnableIntegrationInCustomTheme}">
-                                            <Button Name="PART_HltbCustomButton" Content="&#x23F1;" ToolTip="{DynamicResource LOCHowLongToBeat}"
+                                        <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
+                                            <Button Name="PART_CustomHowLongToBeatButton" Content="&#x23F1;" ToolTip="{DynamicResource LOCHowLongToBeat}"
                                                     FontFamily="{DynamicResource SymbolFont}"/>
                                             <Grid.Style>
                                                 <Style TargetType="Grid">
@@ -592,22 +594,9 @@
                                                 </Style>
                                             </Grid.Style>
                                         </Grid>
-
-                                        <Grid Tag="{DynamicResource Sc_EnableIntegrationInCustomTheme}">
-                                            <Button Name="PART_ScCustomButton" Content="&#x1F396;" ToolTip="SuccessStory"
-                                                    FontFamily="{DynamicResource SymbolFont}" />
-                                            <Grid.Style>
-                                                <Style TargetType="Grid">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                            <Setter Property="Visibility" Value="Visible" />
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                            </Grid.Style>
-                                        </Grid>
-
+                                        <!-- SystemChecker -->
+                                        <Button Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
+                                                    FontFamily="{DynamicResource SymbolFont}"/>
                                         <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
                                                 FontFamily="{DynamicResource SymbolFont}" Content="&#xE104;"/>
                                         <StackPanel.Style>
@@ -728,7 +717,7 @@
                                             <ItemsControl Name="PART_ItemsFeatures"/>
                                         </GridEx>
                                     </StackPanel>
-
+                                    <!-- Cover Image -->
                                     <StackPanel Name="DetailsLeftPanel" DockPanel.Dock="Left" Margin="0,20,20,0" MinWidth="{Binding ElementName=PART_ImageCover, Path=ActualWidth}">
                                         <Border>
                                             <Image Name="PART_ImageCover" VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -755,6 +744,7 @@
                                                                   Opacity=".5" BlurRadius="10"/>
                                             </Border.Effect>
                                         </Border>
+                                        <!-- Labels in Details -->
                                         <GridEx ColumnCount="2" RowCount="6" AutoLayoutColumns="2" HorizontalAlignment="Center">
                                             <Grid.Resources>
                                                 <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
@@ -813,6 +803,7 @@
                                                 <Setter Property="Margin" Value="0"/>
                                             </Style>
                                         </StackPanel.Resources>
+                                        <!-- SuccessStory Stack -->
                                         <StackPanel Margin="0" >
                                             <StackPanel Margin="0,0,0,20" x:Name="___SuccessStory_StackPanel_" Visibility="{PluginStatus Plugin=playnite-successstory-plugin, Status=Installed}">
                                                 <StackPanel.Style>
@@ -828,8 +819,7 @@
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
-
-                                                <Grid HorizontalAlignment="Stretch" Margin="0,0,0,20" >
+                                                <Grid Visibility="{PluginSettings Plugin=SuccessStory, Path=HasData}" HorizontalAlignment="Stretch" Margin="0,0,0,20" >
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*"/>
                                                         <ColumnDefinition Width="Auto"/>
@@ -839,10 +829,9 @@
                                                     <TextBlock Text="{DynamicResource LOCCommonLinksAchievements}" Margin="10,0,10,0"
                                                                        Grid.Column="1" Foreground="{DynamicResource TextBrush}"
                                                                        FontSize="{DynamicResource FontSizeLarger}" FontFamily="{DynamicResource FontFamily}"
-                                                                       Typography.Capitals="SmallCaps" FontWeight="SemiBold" />
+                                                                       Typography.Capitals="SmallCaps" FontWeight="SemiBold"  />
                                                     <Separator Margin="0" Background="{DynamicResource HoverBrush}" Grid.Column="2"/>
                                                 </Grid>
-
                                                 <ContentControl x:Name="SuccessStory_PluginChart" />
                                                 <ContentControl x:Name="SuccessStory_PluginProgressBar" />
                                                 <ContentControl x:Name="SuccessStory_PluginCompactList" />
@@ -851,6 +840,7 @@
                                                 <ContentControl x:Name="SuccessStory_PluginList" />
                                                 <ContentControl x:Name="SuccessStory_PluginUserStats" />
                                             </StackPanel>
+                                            
                                             <StackPanel Name="PART_ElemDescription" Margin="0,0,0,20">
                                                 <Grid HorizontalAlignment="Stretch" Margin="0,0,0,20" >
                                                     <Grid.ColumnDefinitions>

@@ -1,5 +1,11 @@
 ThemeApiVersion: 2.0.0
-Id: Magpie_Desktop_GBV
-Name: Magpie (Grid Banner Variant)
-Author: Dan Davis
-Version: 1.0.2
+Id: Magpie_Desktop_GBV2
+Name: Magpie9 (GBV)
+Author: Twiggy5471
+Version: 1.0.4
+
+Links:
+  - Name: Theme forum
+    Url: https://playnite.link/forum/
+  - Name: Theme Github
+    Url: https://github.com/Twiggy547/Magpie-Playnite-Theme

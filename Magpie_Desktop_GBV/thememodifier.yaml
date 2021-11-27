@@ -1,0 +1,14 @@
+Constants:
+  - Magpie Specific
+  - UseAbsoluteExtraMetadataPath: Use Absolute Extra Metadata Path
+  - ExtraMetadataPath: Set Absolute Extra Metadata Path
+  - TitleTextVisibility: Title Text Visability
+  - AboutGameText: Change "About Game" text
+  - GridFavoriteHighlight: Highlight Favorite Games
+  - Magpie Specific Colors
+  - PlayButtonColor: Play Button
+  - ButtonBackgroundColor: Button Background
+  - ContextButtonColor: Context Button 
+  - ContextButtonHighlightColor: Context Button Highlight
+  - ClearFilterButtonColor: Clear Filter Button
+  - FavoriteColor: Favorite Games

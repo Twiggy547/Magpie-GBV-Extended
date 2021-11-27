@@ -40,15 +40,71 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-
-                            <TextBlock Name="LogoPath" Style="{DynamicResource ExtraMetadataLogoPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
-                            <TextBlock Name="LogoLeftPath" Style="{DynamicResource ExtraMetadataLogoLeftPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
-                            <TextBlock Name="LogoRightPath" Style="{DynamicResource ExtraMetadataLogoRightPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
-                            <TextBlock Name="HeaderPath" Style="{DynamicResource ExtraMetadataHeaderPath}" 
-                                   Visibility="Collapsed"  Tag="{DynamicResource ExtraMetadataPath}"/>
+                            <!-- ExtraMetadata Logos -->
+                            <TextBlock Name="LogoPath" Tag="{DynamicResource ExtraMetadataPath}" Visibility="Collapsed">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>
+                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                    <Binding Source="\ExtraMetadata\games\"/>
+                                                    <Binding Path="Game.Id"/>
+                                                    <Binding Source="\logo.png" />
+                                                </MultiBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                             <TextBlock Name="LogoLeftPath" Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}">                 
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>
+                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                    <Binding Source="\ExtraMetadata\games\"/>
+                                                    <Binding Path="Game.Id"/>
+                                                    <Binding Source="\logo-l.png" />
+                                                </MultiBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Name="LogoRightPath" Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text">
+                                        <Setter.Value>
+                                            <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                <Binding Source="\ExtraMetadata\games\"/>
+                                                <Binding Path="Game.Id"/>
+                                                <Binding Source="\logo-r.png" />
+                                            </MultiBinding>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                            <TextBlock Name="HeaderPath" Visibility="Collapsed"  Tag="{DynamicResource ExtraMetadataPath}">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text">
+                                        <Setter.Value>
+                                            <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                <Binding Source="\ExtraMetadata\games\"/>
+                                                <Binding Path="Game.Id"/>
+                                                <Binding Source="\header.jpg" />
+                                            </MultiBinding>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
 
                             <Grid Margin="0">
                                 <Grid.Style>
@@ -117,6 +173,7 @@
                                                 <RowDefinition Height="1*" />
                                                 <RowDefinition Height="{Binding ElementName=ControlsPanel, Path=ActualHeight}" />
                                             </Grid.RowDefinitions>
+                                            <!-- ExtraMetadata Logos -->
                                             <FadeImage HorizontalAlignment="Center" VerticalAlignment="Center" Name="FadeLogoImage" AnimationEnabled="{Settings BackgroundImageAnimation}"
                                                            RenderOptions.BitmapScalingMode="Fant" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Uniform"
                                                            Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
@@ -511,14 +568,17 @@
                                                     <Setter Property="MinWidth" Value="75"/>
                                                 </Style>
                                             </StackPanel.Resources>
-                                            <StackPanel ToolTip="{DynamicResource LOCTimePlayed}">
-                                                <Label Name="PART_ElemPlayTime" Content="&#x23F3;"/>
+                                            <StackPanel ToolTip="{DynamicResource LOCTimePlayed}" Height="35">
+                                                <Label Name="PART_ElemPlayTime" Content="&#x23F3;" />
                                                 <TextBlock Name="PART_TextPlayTime"/>
                                             </StackPanel>
-                                            <StackPanel Tag="{DynamicResource Htlb_EnableIntegrationInCustomTheme}">
-                                                <StackPanel Orientation="Horizontal" Tag="{DynamicResource Htlb_HasData}" ToolTip="{DynamicResource LOCHowLongToBeat}">
+                                            <!-- HowLongToBeat TimeToBeat -->
+                                            <StackPanel Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
+                                                <StackPanel Orientation="Horizontal" Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}" ToolTip="{DynamicResource LOCHowLongToBeat}">
                                                     <Label Content="&#x23F1;"/>
-                                                    <TextBlock Text="{DynamicResource Htlb_TimeToBeatFormat}"/>
+                                                    <StackPanel Orientation="Horizontal" Height="35">
+                                                        <TextBlock Text="{PluginSettings Plugin=HowLongToBeat, Path=TimeToBeatFormat}" />
+                                                    </StackPanel>
                                                     <StackPanel.Style>
                                                         <Style>
                                                             <Setter Property="Control.Visibility" Value="Collapsed"/>
@@ -541,12 +601,13 @@
                                                     </Style>
                                                 </StackPanel.Style>
                                             </StackPanel>
-                                            <StackPanel ToolTip="{DynamicResource LOCLastPlayed}">
+                                            <StackPanel ToolTip="{DynamicResource LOCLastPlayed}" Orientation="Horizontal" Height="35">
                                                 <Label Name="PART_ElemLastPlayed" Content="&#xE163;"/>
                                                 <TextBlock Name="PART_TextLastActivity"/>
                                             </StackPanel>
-                                            <StackPanel Orientation="Horizontal" Tag="{DynamicResource Sc_HasData}"
-                                                ToolTip="{DynamicResource LOCCommonLinksAchievements}">
+                                            <!-- SuccessStory Percent -->
+                                            <StackPanel Orientation="Horizontal" Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}" Height="35"
+                                                ToolTip="{DynamicResource LOCCommonLinksAchievements}" >
                                                 <StackPanel.Style>
                                                     <Style>
                                                         <Setter Property="Control.Visibility" Value="Collapsed"/>
@@ -557,7 +618,7 @@
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
-                                                <Label Content="&#x1F396;" Tag="{DynamicResource Sc_PercentageUnlocked}">
+                                                <Label Content="&#x1F396;" Tag="{PluginSettings Plugin=SuccessStory, Path=Percent}">
                                                     <Label.Style>
                                                         <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
                                                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDarker}"/>
@@ -580,10 +641,10 @@
                                                         </Style>
                                                     </Label.Style>
                                                 </Label>
-                                                <TextBlock Tag="{DynamicResource Sc_PercentageUnlocked}">
-                                            <Run Text="{DynamicResource Sc_UnlockedString}"/>
+                                                <TextBlock Tag="{PluginSettings Plugin=SuccessStory, Path=Percent}">
+                                            <Run Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked}"/>
                                             <Run Text=" / "/>
-                                            <Run Text="{DynamicResource Sc_TotalString}"/>
+                                            <Run Text="{PluginSettings Plugin=SuccessStory, Path=Total}"/>
                                                     <TextBlock.Style>
                                                         <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
                                                             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -602,9 +663,9 @@
                                                     </TextBlock.Style>
                                                 </TextBlock>
                                             </StackPanel>
-                                            <StackPanel ToolTip="{DynamicResource LOCCompletionStatus}">
-                                                <Label Name="PART_ElemCompletionStatus" Content="&#xE10B;"/>
-                                                <Button Name="PART_ButtonCompletionStatus"/>
+                                            <StackPanel ToolTip="{DynamicResource LOCCompletionStatus}" Orientation="Horizontal" Height="35" Margin="75,0,0,0"> 
+                                                <Label Name="PART_ElemCompletionStatus" Content="&#xE10B;" FontSize="{DynamicResource FontSizeLarge}"/>
+                                                <Button Name="PART_ButtonCompletionStatus" FontSize="{DynamicResource FontSizeLarge}" />
                                             </StackPanel>
                                         </StackPanel>
 
@@ -614,12 +675,16 @@
                                             <Button Name="PART_ButtonContextAction" FontSize="{DynamicResource FontSizeLarger}"
                                                         Style="{DynamicResource ContextButton}" MinWidth="150"/>
                                             <Button Name="PART_ButtonMoreActions" Content="&#xE10C;" FontFamily="{DynamicResource SymbolFont}"/>
+                                            <!-- SuccessStory plugin button -->
+                                            <Button Name="PART_CustomScButton" Content="&#x1F396;" ToolTip="{DynamicResource LOCSuccessStory}"
+                                                    FontFamily="{DynamicResource SymbolFont}" />
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <StackPanel Orientation="Horizontal">
-                                                <Grid Tag="{DynamicResource Htlb_EnableIntegrationInCustomTheme}">
-                                                    <Button Name="PART_HltbCustomButton" Content="&#x23F1;" ToolTip="{DynamicResource LOCHowLongToBeat}"
+                                                <!-- HowLongToBeat plugin button -->
+                                                <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
+                                                    <Button Name="PART_CustomHowLongToBeatButton" Content="&#x23F1;" ToolTip="{DynamicResource LOCHowLongToBeat}"
                                                     FontFamily="{DynamicResource SymbolFont}"/>
                                                     <Grid.Style>
                                                         <Style TargetType="Grid">
@@ -632,23 +697,11 @@
                                                         </Style>
                                                     </Grid.Style>
                                                 </Grid>
+                                                <!-- SystemChecker plugin button -->
+                                                    <Button Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
+                                                    FontFamily="{DynamicResource SymbolFont}"/>
 
-                                                <Grid Tag="{DynamicResource Sc_EnableIntegrationInCustomTheme}">
-                                                    <Button Name="PART_ScCustomButton" Content="&#x1F396;" ToolTip="SuccessStory"
-                                                    FontFamily="{DynamicResource SymbolFont}" />
-                                                    <Grid.Style>
-                                                        <Style TargetType="Grid">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Grid.Style>
-                                                </Grid>
-
-                                                <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
+                                                    <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
                                                 FontFamily="{DynamicResource SymbolFont}" Content="&#xE104;"/>
 
                                                 <StackPanel.Style>
