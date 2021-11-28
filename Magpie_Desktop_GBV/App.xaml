@@ -6,14 +6,6 @@
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <!--Plugin Localizations-->
-        <ResourceDictionary Source="PluginLocalizations/PluginCommon.xaml" />
-        <ResourceDictionary Source="PluginLocalizations/CheckLocalizations.xaml" />
-        <ResourceDictionary Source="PluginLocalizations/GameActivity.xaml" />
-        <ResourceDictionary Source="PluginLocalizations/HowLongToBeat.xaml" />
-        <ResourceDictionary Source="PluginLocalizations/ScreenshotsVisualizer.xaml" />
-        <ResourceDictionary Source="PluginLocalizations/SuccessStory.xaml" />
-        
         <ResourceDictionary Source="LocSource.xaml" />
         <ResourceDictionary Source="GlobalResources.xaml" />
         <ResourceDictionary Source="Constants.xaml" />
@@ -67,6 +59,7 @@
         <ResourceDictionary Source="CustomControls/FilterSelectionBox.xaml" />
         <ResourceDictionary Source="CustomControls/SearchBox.xaml" />
         <ResourceDictionary Source="CustomControls/TopPanelItem.xaml" />
+        <ResourceDictionary Source="CustomControls/PathSelectionBox.xaml" />
         <!--Derived Styles-->
         <ResourceDictionary Source="DerivedStyles/TextBlockGameScore.xaml" />
         <ResourceDictionary Source="DerivedStyles/PropertyItemButton.xaml" />
@@ -78,6 +71,7 @@
         <ResourceDictionary Source="DerivedStyles/DetailsViewItemTemplate.xaml" />
         <ResourceDictionary Source="DerivedStyles/DetailsViewGroupStyle.xaml" />
         <ResourceDictionary Source="DerivedStyles/DetailsViewItemStyle.xaml" />
+        <ResourceDictionary Source="DerivedStyles/ListViewGroupStyle.xaml" />
         <ResourceDictionary Source="DerivedStyles/StandardWindowStyle.xaml" />
         <ResourceDictionary Source="DerivedStyles/WindowBarButton.xaml" />
         <ResourceDictionary Source="DerivedStyles/BottomButton.xaml" />

@@ -26,7 +26,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}" TargetName="Border" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}"/>
                             <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -40,5 +40,5 @@
                 <Setter Property="BorderBrush" Value="{DynamicResource HoverBorderBrush}"/>
             </Trigger>
         </Style.Triggers>
-    </Style>                  
+    </Style>
 </ResourceDictionary>

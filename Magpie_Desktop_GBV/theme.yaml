@@ -1,11 +1,10 @@
-ThemeApiVersion: 2.0.0
-Id: Magpie_Desktop_GBV2
-Name: Magpie9 (GBV)
-Author: Twiggy5471
-Version: 1.0.4
-
+ThemeApiVersion: 2.1.0
+Id: Magpie_Desktop_GBVX
+Name: Magpie GBV (Extended)
+Author: Dan Davis (Twiggy547)
+Version: 1.1.1
 Links:
-  - Name: Theme forum
-    Url: https://playnite.link/forum/
-  - Name: Theme Github
-    Url: https://github.com/Twiggy547/Magpie-Playnite-Theme
+- Name: Original Theme forum
+  Url: https://playnite.link/forum/thread-336.html
+- Name: Updated Theme Github
+  Url: https://github.com/Twiggy547/Magpie-Playnite-Theme

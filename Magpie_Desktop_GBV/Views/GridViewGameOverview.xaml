@@ -40,71 +40,15 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <!-- ExtraMetadata Logos -->
-                            <TextBlock Name="LogoPath" Tag="{DynamicResource ExtraMetadataPath}" Visibility="Collapsed">
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Text">
-                                            <Setter.Value>
-                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                    <Binding Source="\ExtraMetadata\games\"/>
-                                                    <Binding Path="Game.Id"/>
-                                                    <Binding Source="\logo.png" />
-                                                </MultiBinding>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                             <TextBlock Name="LogoLeftPath" Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}">                 
-                                <TextBlock.Style>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Text">
-                                            <Setter.Value>
-                                                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                    <Binding Source="\ExtraMetadata\games\"/>
-                                                    <Binding Path="Game.Id"/>
-                                                    <Binding Source="\logo-l.png" />
-                                                </MultiBinding>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Name="LogoRightPath" Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}">
-                            <TextBlock.Style>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text">
-                                        <Setter.Value>
-                                            <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                <Binding Source="\ExtraMetadata\games\"/>
-                                                <Binding Path="Game.Id"/>
-                                                <Binding Source="\logo-r.png" />
-                                            </MultiBinding>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                            <TextBlock Name="HeaderPath" Visibility="Collapsed"  Tag="{DynamicResource ExtraMetadataPath}">
-                            <TextBlock.Style>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text">
-                                        <Setter.Value>
-                                            <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                                                <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                                                <Binding Source="\ExtraMetadata\games\"/>
-                                                <Binding Path="Game.Id"/>
-                                                <Binding Source="\header.jpg" />
-                                            </MultiBinding>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+
+                            <TextBlock Name="LogoPath" Style="{DynamicResource ExtraMetadataLogoPath}"
+                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
+                            <TextBlock Name="LogoLeftPath" Style="{DynamicResource ExtraMetadataLogoLeftPath}"
+                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
+                            <TextBlock Name="LogoRightPath" Style="{DynamicResource ExtraMetadataLogoRightPath}"
+                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
+                            <TextBlock Name="HeaderPath" Style="{DynamicResource ExtraMetadataHeaderPath}" 
+                                   Visibility="Collapsed"  Tag="{DynamicResource ExtraMetadataPath}"/>
 
                             <Grid Margin="0">
                                 <Grid.Style>
@@ -563,6 +507,11 @@
                                                     <Setter Property="TextOptions.TextRenderingMode" Value="Aliased"/>
                                                 </Style>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+                                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                                    <Setter Property="Margin" Value="0,0,20,0"/>
+                                                    <Setter Property="MinWidth" Value="75"/>
+                                                </Style>
+                                                <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}" >
                                                     <Setter Property="VerticalAlignment" Value="Center"/>
                                                     <Setter Property="Margin" Value="0,0,20,0"/>
                                                     <Setter Property="MinWidth" Value="75"/>

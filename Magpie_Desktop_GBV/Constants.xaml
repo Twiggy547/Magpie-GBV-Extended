@@ -49,7 +49,7 @@
     <SolidColorBrush x:Key="GridItemBackgroundBrush" Opacity="0.7 " Color="{DynamicResource GridItemBackgroundColor}" />
     <SolidColorBrush x:Key="WindowPanelSeparatorBrush" Opacity="0.7" Color="{DynamicResource WindowPanelSeparatorColor}" />
     <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
-    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource ContextButtonColor}" />
+    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource MainColorDark}" />
 
     <SolidColorBrush x:Key="PositiveRatingBrush" Color="#78ffa0" />
     <SolidColorBrush x:Key="NegativeRatingBrush" Color="#ff6b6b" />
@@ -79,10 +79,6 @@
 
     <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">false</sys:Boolean>
     <sys:String x:Key="ExtraMetadataPath">..\..\..\..</sys:String>
-    <sys:Double x:Key="DetailsViewLogoMaxHeight">150</sys:Double>
-    <sys:Double x:Key="DetailsViewLogoMaxWidth">400</sys:Double>
-    <sys:Double x:Key="GridViewLogoMaxHeight">80</sys:Double>
-    <sys:Double x:Key="GridViewLogoMaxWidth">400</sys:Double>
     <sys:String x:Key="AboutGameText">About the Game</sys:String>
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>
@@ -125,6 +121,6 @@
     <SolidColorBrush x:Key="ContextBorderBrush" Opacity="1" Color="{DynamicResource ContextButtonColor}" />
     <SolidColorBrush x:Key="ClearFilterButtonBrush" Opacity="0.7" Color="{DynamicResource ClearFilterButtonColor}" />
     <SolidColorBrush x:Key="ClearFilterBorderBrush" Opacity="1" Color="{DynamicResource ClearFilterButtonColor}" />
-    <SolidColorBrush x:Key="CoverOverlayBackgroundBrush" Opacity=".5" Color="{DynamicResource PanelSeparatorColor}" />
+    <SolidColorBrush x:Key="CoverOverlayBackgroundBrush" Opacity=".5" Color="{DynamicResource PanelBackgroundColor}" />
 
 </ResourceDictionary>

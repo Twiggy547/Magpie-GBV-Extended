@@ -469,6 +469,11 @@
                                             <Setter Property="Margin" Value="0,0,20,0"/>
                                             <Setter Property="MinWidth" Value="75"/>
                                         </Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource SimpleButton}" >
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Margin" Value="0,0,20,0"/>
+                                            <Setter Property="MinWidth" Value="75"/>
+                                        </Style>
                                     </StackPanel.Resources>
                                     <StackPanel ToolTip="{DynamicResource LOCTimePlayed}">
                                         <Label Name="PART_ElemPlayTime" Content="&#x23F3;"/>

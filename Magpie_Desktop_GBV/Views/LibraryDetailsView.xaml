@@ -10,15 +10,21 @@
                 <ControlTemplate TargetType="{x:Type LibraryDetailsView}">
                     <DockPanel d:DesignWidth="1280" d:DesignHeight="960"
                                d:DataContext="{x:Static DesignMainViewModel.DesignIntance}">
-                        <Grid>
+                        <Grid DockPanel.Dock="{Settings DetailsListPosition}"
+                              Width="{Settings DetailsListWitdh}">
                             <Border Background="{DynamicResource PanelBackgroundBrush}">
                                 <ExtendedListBox x:Name="PART_ListGames" Padding="0,20,0,0"
+                                         SelectionMode="Extended" 
                                          Width="{Settings DetailsListWitdh}"
                                          BorderBrush="{DynamicResource PanelSeparatorBrush}"
                                          DockPanel.Dock="{Settings DetailsListPosition}"
                                          ItemContainerStyle="{DynamicResource DetailsViewItemStyle}"
                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                          ScrollViewer.PanningMode="VerticalOnly"
+                                         VirtualizingPanel.CacheLengthUnit="Item"
+                                         VirtualizingPanel.CacheLength="5"
+                                         VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                                         VirtualizingPanel.VirtualizationMode="Recycling"
                                          Background="Transparent">
                                     <ExtendedListBox.Style>
                                         <Style TargetType="ExtendedListBox" BasedOn="{StaticResource {x:Type ExtendedListBox}}">

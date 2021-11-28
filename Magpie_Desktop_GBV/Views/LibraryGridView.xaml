@@ -15,6 +15,10 @@
                                               Height="{Settings GrdiDetailsWitdh}"
                                               DockPanel.Dock="Top" />
                         <Grid DockPanel.Dock="Bottom">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition/>
@@ -23,6 +27,7 @@
                                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                                              ScrollViewer.PanningMode="VerticalOnly"
                                              ItemContainerStyle="{DynamicResource GridViewItemStyle}"
+                                             SelectionMode="Extended"
                                              DockPanel.Dock="Left" Background="Transparent"
                                              BorderThickness="0" Grid.Column="1">
                                 <ExtendedListBox.ItemTemplate>
