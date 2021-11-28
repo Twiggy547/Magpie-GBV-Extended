@@ -1,5 +1,5 @@
 # Magpie Grid Banner Variant (Extended) - A Theme for [Playnite](https://playnite.link/)
- Just a version of Dan Davis's Magpie GBV Beta updated with more extensions than defualt and even more flexability!
+ Just a version of Dan Davis's Magpie GBV updated with more extensions than defualt and even more flexability!
  Thank you Dan for this awesome Layout!
 ### Design Goals:
  * __Metro Style__ - Heavily influenced by the the [Metro for Steam Skin](https://www.metroforsteam.com/) and Epic Launcher's clean design.
