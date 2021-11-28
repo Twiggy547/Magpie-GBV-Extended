@@ -1,7 +1,8 @@
-# Magpie - A Theme for [Playnite](https://playnite.link/) ![DownloadCount](https://img.shields.io/github/downloads/Tally/Magpie-Playnite-Theme/total.svg)
-Heavily influenced by the the [Metro for Steam Skin](https://www.metroforsteam.com/) and Epic Launcher's clean design, with a focus on flexibility, customizability and the occasional addition of functions that I desire for personal use.
+# Magpie Grid Banner Variant (Extended) - A Theme for [Playnite](https://playnite.link/)
+ Just a version of Dan Davis's Magpie GBV Beta updated with more extensions than defualt. Thank you Dan for this awesome Layout!
 ### Design Goals:
- * __Clear but Unobtrusive Style__ - Your interest is the games; Magpie will not distract you from them but help you parse your large and detailed library easily.
+ * __Metro Style__ - Heavily influenced by the the [Metro for Steam Skin](https://www.metroforsteam.com/) and Epic Launcher's clean design.
+ * __Clear but Unobtrusive Layout__ - Your interest is the games; Magpie will not distract you from them but help you parse your large and detailed library easily.
  * __Flexible Appearance__ - I have favorite colors and feelings about font families, transparancy, and border thickness. Sometimes they change hour-to-hour so I'm sure you do too. I've made Magpie to look good and respect your preferences from font sizes, to amount of information, to whether you want a focused darkroom effect or an edge-to-edge display for your games' media. For those that need more control, variables to adjust color, control corner roundness, or transparency are accessible from the main Constants.xaml or use of the ThemeModifier plugin.
 
 ### Outstanding Features:
@@ -11,9 +12,10 @@ Heavily influenced by the the [Metro for Steam Skin](https://www.metroforsteam.c
  
 ### Supporting or Compatible Extensions for Playnite:
  * __[Extra Metadata Tools](https://playnite.link/forum/thread-575.html) by DarkLinkPower__ - Implementing flexible support for additional metadata media was a shared goal and this extension will facilitate acquiring or adapting logos and other custom media for use in this and other themes.
- * __[ThemeModifier](https://github.com/Lacro59/playnite-thememodifier-plugin)__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the settings menu. Those who prefer can do the same by manually editing the contained Constants.xaml file, however.
+ * __[ThemeModifier](https://github.com/Lacro59/playnite-thememodifier-plugin)__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the ThemeModifier Button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file
   * __[HowLongToBeat Plugin](https://github.com/Lacro59/playnite-howlongtobeat-plugin) by Lacro59__ - Useful and, if custom theme integration is enabled, time-to-beat will appear with playtime, the button is appropriately themed, and it is located with the edit button.
-  * __[SuccessStory Plugin](https://github.com/Lacro59/playnite-successstory-plugin) by Lacro59__ - Another excellent plugin. Integration with Magpie is limited but coherent like with HowLongToBeat. I don't care too much for achievements but it's good to have unified access to them.
+  * __[SuccessStory Plugin](https://github.com/Lacro59/playnite-successstory-plugin) by Lacro59__ - Another excellent plugin. Integration with Magpie is limited but coherent like with HowLongToBeat.
+  * __[SystemChecker Plugin](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - adds in a button next to the HLTB button in the mainbar. Good for checking system compatability
 ### Some example screenshots
 ![Details view banner mode](/assets/details1.png)
 
