@@ -1,9 +1,9 @@
-AddonId: Magpie_Desktop_GBVX
+AddonId: Twiggy547_Magpie_Extended
 Packages:
   - Version: 1.1.1
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2021-11-27
-    PackageUrl: https://github.com/Twiggy547/Magpie-Playnite-Theme/releases/download/v1.1.1/Magpie_Desktop_GBVX_1_1_1.pthm
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v1.1.1/Twiggy547-Magpie-Extended_1_1_1.pthm
     Changelog:
       - General Fixes
       - SystemChecker Extension support
@@ -13,6 +13,6 @@ Packages:
       - Removed Basic Magpie since I am only interested in the Grid Banner Variant.
       - I will still add stuff to Details View.
       - Fixed broken extensions (SuccessStory, HLTB, ThemeModifier)
-      - "Fixed"??? Main bar spacing issues with Completion Status tag enabled in Details Settings.
+      - Fixed?? Main bar spacing issues with Completion Status tag enabled in Details Settings.
       - Current Bugs
       - GameActivity breaks when selecting a game to display info for.
