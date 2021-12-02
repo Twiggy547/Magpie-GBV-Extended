@@ -624,15 +624,45 @@
                                             <Button Name="PART_ButtonContextAction" FontSize="{DynamicResource FontSizeLarger}"
                                                         Style="{DynamicResource ContextButton}" MinWidth="150"/>
                                             <Button Name="PART_ButtonMoreActions" Content="&#xE10C;" FontFamily="{DynamicResource SymbolFont}"/>
-                                            <!-- SuccessStory plugin button -->
-                                            <Button Name="PART_CustomScButton" Content="&#x1F396;" ToolTip="{DynamicResource LOCSuccessStory}"
+                                        </StackPanel>
+                                        <!-- SuccessStory plugin button -->
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Grid Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
+                                                    <Button Name="PART_CustomScButton" Content="&#x1F396;" ToolTip="{DynamicResource LOCSuccessStory}"
                                                     FontFamily="{DynamicResource SymbolFont}" />
+                                                    <Grid.Style>
+                                                        <Style TargetType="Grid">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"  Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Grid.Style>
+                                                </Grid>
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Hidden" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}}"  Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                            </StackPanel>
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
                                             <StackPanel Orientation="Horizontal">
                                                 <!-- HowLongToBeat plugin button -->
                                                 <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
                                                     <Button Name="PART_CustomHowLongToBeatButton" Content="&#x23F1;" ToolTip="{DynamicResource LOCHowLongToBeat}"
                                                     FontFamily="{DynamicResource SymbolFont}"/>
                                                     <Grid.Style>
@@ -645,12 +675,24 @@
                                                             </Style.Triggers>
                                                         </Style>
                                                     </Grid.Style>
+                                                    <!-- SystemChecker plugin button -->
+                                                    </Grid>
+                                                <Grid Tag="{PluginSettings Plugin=SystemChecker, Path=HasData}">
+                                                    <Button Grid.Column="1"  Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
+                                                    FontFamily="{DynamicResource SymbolFont}" />
+                                                    <Grid.Style>
+                                                        <Style TargetType="Grid">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"  Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Grid.Style>
                                                 </Grid>
-                                                <!-- SystemChecker plugin button -->
-                                                    <Button Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
-                                                    FontFamily="{DynamicResource SymbolFont}"/>
 
-                                                    <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
+                                                <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
                                                 FontFamily="{DynamicResource SymbolFont}" Content="&#xE104;"/>
 
                                                 <StackPanel.Style>
