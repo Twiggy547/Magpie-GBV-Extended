@@ -24,4 +24,3 @@
 
 ![Details view background mode](/Screenshots/details2.png)
 
-![Grid view traditional layout](/Screenshots/grid1.png)
