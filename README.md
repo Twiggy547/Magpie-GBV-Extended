@@ -22,5 +22,6 @@
 
 ![Details view banner mode](/Screenshots/details1.png)
 
+### Background Mode 
 ![Details view background mode](/Screenshots/details2.png)
 
