@@ -13,8 +13,8 @@ Constants:
   - DetailsPanelBrush: Center info panel in details view.
   - DetailsViewGroupTextBrush: Group titles in details view.
   - ExpanderBackgroundBrush: Background for group expanders.
-  - PanelButtonBrush: Buttons shown in details & grid item info panels.
-  - PanelButtonHoverBrush: The above when hovered & play button normally.
+  - DetailsButtonBrush: Buttons shown in details & grid item info panels.
+  - HoverBorderBrush: The above when hovered & play button normally.
   - PlayButtonBrush: Play button when hovered.
   - ContextButtonBrush: Install/contextual button when hovered.
   - CoverHighlightBrush: Hovered covers in grid view.

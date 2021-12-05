@@ -176,7 +176,7 @@
                                     </Style>
                                 </FadeImage.Style>
                             </FadeImage>
-                            
+
                             <Grid Grid.Column="1"  Grid.Row="0" Margin="0" Name="TitleGrid"
                                   Width="{Binding ElementName=DetailsPanel, Path=ActualWidth}"
                                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
@@ -579,10 +579,38 @@
                                             MinWidth="80" Style="{DynamicResource ContextButton}" FontSize="{DynamicResource FontSizeLarger}"/>
                                     <Button Name="PART_ButtonMoreActions"
                                                 Content="&#xE10C;" FontFamily="{DynamicResource SymbolFont}"/>
-                                    <Button Name="PART_CustomScButton" Content="&#x1F396;" ToolTip="{DynamicResource LOCSuccessStory}"
-                                                    FontFamily="{DynamicResource SymbolFont}" />
                                 </StackPanel>
-
+                                
+                                <!-- SuccessStory plugin button -->
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Grid Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
+                                            <Button Name="PART_CustomScButton" Content="&#x1F396;" ToolTip="{DynamicResource LOCSuccessStory}"
+                                            FontFamily="{DynamicResource SymbolFont}" />
+                                            <Grid.Style>
+                                                <Style TargetType="Grid">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"  Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Grid.Style>
+                                        </Grid>
+                                        <StackPanel.Style>
+                                            <Style TargetType="StackPanel">
+                                                <Setter Property="Visibility" Value="Hidden" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Grid}}"  Value="True">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </StackPanel.Style>
+                                    </StackPanel>
+                                </StackPanel>
+                                
                                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
                                     <StackPanel Orientation="Horizontal">
                                         <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
