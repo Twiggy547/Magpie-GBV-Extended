@@ -18,9 +18,9 @@
   * __[SuccessStory Plugin](https://github.com/Lacro59/playnite-successstory-plugin) by Lacro59__ - Another excellent plugin. Integration with Magpie is limited but coherent like with HowLongToBeat.
   * __[SystemChecker Plugin](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - adds in a button next to the HLTB button in the mainbar. Good for checking system compatability
 ### Some example screenshots
-![Details view banner mode](/Screenshots/details1.png)
-
 ![Grid view banner variant](/Screenshots/grid2.png)
+
+![Details view banner mode](/Screenshots/details1.png)
 
 ![Details view background mode](/Screenshots/details2.png)
 
