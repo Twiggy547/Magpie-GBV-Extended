@@ -1,11 +1,12 @@
 Constants:
   - Magpie Specific
-  - BGModeOn: Off for banners on for backgrounds in details.
-  - GridFavoriteHighlight: Colored border and glow for favorites in grid view.
-  - FavoriteColor: Color of favorites' border and star.
-  - UseAbsoluteExtraMetadataPath: Use absolute path to your Playnite config folder.
-  - ExtraMetadataPath: That path; no ending backslash.
-  - DetailsViewPanelWidth(640,2560): Width of main details view panel.
+  - GridFavoriteHighlight: Favorites border glow in Grid view.
+  - FavoriteColorBrush: Color of favorites' border and star.
+  - UseAbsoluteExtraMetadataPath: Use Absolute ExtraMetadata Path.
+  - ExtraMetadataPath: Absolute path to your Playnite folder.
+  - BGModeOn: Background Mode
+  - AboutGameText: Change About Game Text.
+  - DetailsViewPanelWidth(720,1280): Width of main details view panel (BG Mode).
   - TitleTextVisibility: Visibility of Title shown if missing logo.
   - Magpie Specific Colors
   - TitlebarBrush: Titlebar background.
@@ -15,6 +16,6 @@ Constants:
   - ExpanderBackgroundBrush: Background for group expanders.
   - DetailsButtonBrush: Buttons shown in details & grid item info panels.
   - HoverBorderBrush: The above when hovered & play button normally.
-  - PlayButtonBrush: Play button when hovered.
+  - PlayButtonHighlightBrush: Play button when hovered.
   - ContextButtonBrush: Install/contextual button when hovered.
   - CoverHighlightBrush: Hovered covers in grid view.

@@ -81,7 +81,6 @@
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>
 
-    <SolidColorBrush x:Key="FavoriteColorBrush" Color="{DynamicResource FavoriteColor}"/>
     <sys:Double x:Key="ControlCornerRadiusDouble">0</sys:Double>
     <sys:Double x:Key="GroupSeparatorOpacity">1</sys:Double>
     <FontFamily x:Key="SymbolFont">seguisym.ttf#Segoe UI Symbol</FontFamily>
@@ -100,6 +99,7 @@
     <SolidColorBrush x:Key="CoverHighlightBrush" Color="#10FFFFFF" />
 
     <Color x:Key="NormalBorderColor">#282828</Color>
+    <SolidColorBrush x:Key="FavoriteColorBrush" Color="{DynamicResource FavoriteColor}"/>
     <SolidColorBrush x:Key="TitlebarBrush" Color="{DynamicResource PopupBackgroundColor}" Opacity="0.7"/>
     <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{DynamicResource MainColorDark}"/>
     <SolidColorBrush x:Key="DetailsButtonBrush" Color="{DynamicResource HoverColor}" Opacity=".7"/>
