@@ -16,7 +16,8 @@
  * __[ThemeModifier](https://github.com/Lacro59/playnite-thememodifier-plugin)__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the ThemeModifier Button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file
   * __[HowLongToBeat Plugin](https://github.com/Lacro59/playnite-howlongtobeat-plugin) by Lacro59__ - Useful and, if custom theme integration is enabled, time-to-beat will appear with playtime, the button is appropriately themed, and it is located with the edit button.
   * __[SuccessStory Plugin](https://github.com/Lacro59/playnite-successstory-plugin) by Lacro59__ - Another excellent plugin. Integration with Magpie is limited but coherent like with HowLongToBeat.
-  * __[SystemChecker Plugin](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - adds in a button next to the HLTB button in the mainbar. Good for checking system compatability
+  * __[DuplicateHider Plugin](https://github.com/felixkmh/DuplicateHider) by felixkmh__ - Button on game covers that can show & switch between duplicates.
+  * __[SystemChecker Plugin](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - Adds in a button next to the HLTB button in the mainbar. Good for checking system compatability
 ### Some example screenshots
 ### Grid View 
 ![Grid view banner variant](/Screenshots/grid2.png)
