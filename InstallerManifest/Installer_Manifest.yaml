@@ -1,5 +1,18 @@
 AddonId: Twiggy547_Magpie_Extended
 Packages:
+  - Version: 1.9.9
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-12-17
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v1.9.9/Twiggy547_Magpie_Extended_1_9_9.pthm
+    Changelog:
+      - Details View
+      - Revamped SuccessStory in details.
+      - Added ScreenshotViewer
+      - Added HowLongToBeat ProgressBar
+      - Grid View
+      - Removed SuccessStory button mouseover. now button is visible at all times as long as the game has achievements.
+      - Roadmap
+      - Main goal now is to keep adding to Details View and Grid View but still keeping GBV minimal and clean.
   - Version: 1.9.8.5
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2021-12-08
