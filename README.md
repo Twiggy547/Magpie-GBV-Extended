@@ -18,7 +18,8 @@
   * __[GameActivity](https://github.com/Lacro59/playnite-gameactivity-plugin) by Lacro59__ - This plugin creates datas for your game activities and shows many statistics. can use OpenHardwareMonitor and MSI Afterburner to log system temperature and FPS.
   * __[SuccessStory](https://github.com/Lacro59/playnite-successstory-plugin) by Lacro59__ - Another excellent plugin. Integration with Magpie is limited but coherent like with HowLongToBeat.
   * __[DuplicateHider](https://github.com/felixkmh/DuplicateHider) by felixkmh__ - Button on game covers that can show & switch between duplicates.
-  * __[SystemChecker](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - Adds in a button next to the HLTB button in the mainbar. Good for checking system compatability
+  * __[SystemChecker](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - Adds in a button next to the HLTB button in the mainbar. Good for checking system compatability.
+  * __[ScreenshotVisualizer](https://github.com/Lacro59/playnite-screenshotsvisualizer-plugin) by Lacro59__ - Adds the ability to view screenshots for Steam games.
 ### Some example screenshots
 ### Grid View 
 ![Grid view banner variant](/Screenshots/grid2.png)
