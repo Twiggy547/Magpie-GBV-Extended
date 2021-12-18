@@ -13,13 +13,13 @@
  
 ### Supporting or Compatible Extensions for Playnite:
  * __[Extra Metadata Tools](https://playnite.link/forum/thread-575.html) by DarkLinkPower__ - Implementing flexible support for additional metadata media was a shared goal and this extension will facilitate acquiring or adapting logos and other custom media for use in this and other themes.
- * __[ThemeModifier](https://github.com/Lacro59/playnite-thememodifier-plugin)__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the ThemeModifier Button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file
+ * __[ThemeModifier](https://github.com/Lacro59/playnite-thememodifier-plugin) by Lacro59__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the ThemeModifier Button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file. (Currently trying to Fix)
   * __[HowLongToBeat](https://github.com/Lacro59/playnite-howlongtobeat-plugin) by Lacro59__ - Useful and, if custom theme integration is enabled, time-to-beat will appear with playtime, the button is appropriately themed, and it is located with the edit button.
   * __[GameActivity](https://github.com/Lacro59/playnite-gameactivity-plugin) by Lacro59__ - This plugin creates datas for your game activities and shows many statistics. can use OpenHardwareMonitor and MSI Afterburner to log system temperature and FPS.
   * __[SuccessStory](https://github.com/Lacro59/playnite-successstory-plugin) by Lacro59__ - Another excellent plugin. Integration with Magpie is limited but coherent like with HowLongToBeat.
-  * __[DuplicateHider](https://github.com/felixkmh/DuplicateHider) by felixkmh__ - Button on game covers that can show & switch between duplicates.
   * __[SystemChecker](https://github.com/Lacro59/playnite-systemchecker-plugin) by Lacro59__ - Adds in a button next to the HLTB button in the mainbar. Good for checking system compatability.
   * __[ScreenshotVisualizer](https://github.com/Lacro59/playnite-screenshotsvisualizer-plugin) by Lacro59__ - Adds the ability to view screenshots for Steam games.
+  * __[DuplicateHider](https://github.com/felixkmh/DuplicateHider) by felixkmh__ - Button on game covers that can show & switch between duplicates.
 ### Some example screenshots
 ### Grid View 
 ![Grid view banner variant](/Screenshots/grid2.png)
