@@ -22,7 +22,7 @@
                     </ControlTemplate.Resources>
                     <AdornerDecorator>
                         <Border x:Name="WindowBorder" BorderBrush="{DynamicResource PopupBorderBrush}" CornerRadius="0"
-                                BorderThickness="1"
+                                BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}">
                             <Grid>
                                 <ContentPresenter Margin="0,0,0,0"/>

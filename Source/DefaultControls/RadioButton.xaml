@@ -19,7 +19,7 @@
                         <BulletDecorator.Bullet>
                             <Border Background="Transparent">
                                 <Grid Width="18" Height="18">
-                                    <Ellipse x:Name="BulletBorder" Width="18" Height="18" Fill="{TemplateBinding Background}"
+                                    <Ellipse x:Name="BulletBorder" Width="18" Height="18"
                                             Stroke="{DynamicResource NormalBorderBrush}"
                                             StrokeThickness="{DynamicResource EllipseBorderThickness}" />
                                     <Viewbox x:Name="CheckIcon" Visibility="Collapsed" >

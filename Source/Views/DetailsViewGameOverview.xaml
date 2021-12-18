@@ -106,7 +106,7 @@
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
 
                         <TextBlock Name="LogoPath" Style="{DynamicResource ExtraMetadataLogoPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
+                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}" d:IsHidden="True"/>
                         <TextBlock Name="LogoLeftPath" Style="{DynamicResource ExtraMetadataLogoLeftPath}"
                                    Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
                         <TextBlock Name="LogoRightPath" Style="{DynamicResource ExtraMetadataLogoRightPath}"
@@ -335,6 +335,7 @@
                             <!-- Background Mode? -->
                             <Grid Grid.Row="1" Grid.RowSpan="2" Tag="{DynamicResource BGModeOn}">
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="{Settings CalculatedGameDetailsIndentation}"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
@@ -580,7 +581,7 @@
                                     <Button Name="PART_ButtonMoreActions"
                                                 Content="&#xE10C;" FontFamily="{DynamicResource SymbolFont}"/>
                                 </StackPanel>
-                                
+
                                 <!-- SuccessStory plugin button -->
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
                                     <StackPanel Orientation="Horizontal">
@@ -610,7 +611,7 @@
                                         </StackPanel.Style>
                                     </StackPanel>
                                 </StackPanel>
-                                
+                                <!-- HowLongToBeatButton -->
                                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
                                     <StackPanel Orientation="Horizontal">
                                         <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
@@ -628,8 +629,21 @@
                                             </Grid.Style>
                                         </Grid>
                                         <!-- SystemChecker -->
-                                        <Button Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
+                                        <Grid Tag="{PluginSettings Plugin=SystemChecker, Path=HasData}">
+                                            <Button Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
                                                     FontFamily="{DynamicResource SymbolFont}"/>
+                                            <Grid.Style>
+                                                <Style TargetType="Grid">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"  Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Grid.Style>
+                                        </Grid>
+
                                         <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
                                                 FontFamily="{DynamicResource SymbolFont}" Content="&#xE104;"/>
                                         <StackPanel.Style>
@@ -836,9 +850,30 @@
                                                 <Setter Property="Margin" Value="0"/>
                                             </Style>
                                         </StackPanel.Resources>
+                                        <!-- HowLongToBeat Stack -->
+                                        <StackPanel Name="PART_HltbProgressBar"
+                                                    Tag="{PluginSettings Plugin=HowLongToBeat, Path=EnableIntegrationProgressBar}">
+                                            <StackPanel.Style>
+                                                <Style TargetType="{x:Type StackPanel}">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </StackPanel.Style>
+                                            <StackPanel Visibility="{Binding ElementName=HowLongToBeat_PluginProgressBar, Path=Content.Visibility}">
+                                                <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Margin="0,0,0,5" Height="20"
+                                                                Width="{Binding ElementName=PART_HltbProgressBar, Path=ActualWidth}" />
+                                            </StackPanel>
+                                        </StackPanel>
                                         <!-- SuccessStory Stack -->
                                         <StackPanel Margin="0" >
-                                            <StackPanel Margin="0,0,0,20" x:Name="___SuccessStory_StackPanel_" Visibility="{PluginStatus Plugin=playnite-successstory-plugin, Status=Installed}">
+                                            <StackPanel Margin="0,0,0,20" x:Name="___SuccessStory_StackPanel_" Visibility="{Binding ElementName=SuccessStory_PluginProgressBar, Path=Visibility}">
                                                 <StackPanel.Style>
                                                     <Style>
                                                         <Setter Property="UIElement.Visibility" Value="Visible" />
@@ -858,12 +893,13 @@
                                                         <ColumnDefinition Width="Auto"/>
                                                         <ColumnDefinition Width="*"/>
                                                     </Grid.ColumnDefinitions>
-                                                    <Separator Margin="0" Background="{DynamicResource HoverBrush}" Grid.Column="0"/>
-                                                    <TextBlock Text="{DynamicResource LOCCommonLinksAchievements}" Margin="10,0,10,0"
+                                                    <Separator Margin="0,0,10,0" Background="{DynamicResource HoverBrush}" Grid.Column="0" />
+                                                    <Label Content="&#x1F396;" Grid.Column="1" Margin="0,0,0,0" MaxHeight="20" />
+                                                    <TextBlock Text="{DynamicResource LOCCommonLinksAchievements}"  Margin="20,0,10,0"
                                                                        Grid.Column="1" Foreground="{DynamicResource TextBrush}"
                                                                        FontSize="{DynamicResource FontSizeLarger}" FontFamily="{DynamicResource FontFamily}"
                                                                        Typography.Capitals="SmallCaps" FontWeight="SemiBold"  />
-                                                    <Separator Margin="0" Background="{DynamicResource HoverBrush}" Grid.Column="2"/>
+                                                    <Separator Margin="5,0,0,0" Background="{DynamicResource HoverBrush}" Grid.Column="2"/>
                                                 </Grid>
                                                 <ContentControl x:Name="SuccessStory_PluginChart" />
                                                 <ContentControl x:Name="SuccessStory_PluginProgressBar" />
@@ -873,7 +909,84 @@
                                                 <ContentControl x:Name="SuccessStory_PluginList" />
                                                 <ContentControl x:Name="SuccessStory_PluginUserStats" />
                                             </StackPanel>
+                                            <!-- GameActivity elements -->
+                                            <StackPanel Margin="0">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="{x:Type StackPanel}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ElementName=PART_ToggleButtonGameActivity, Path=IsChecked}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding ElementName=PART_ToggleButtonSuccessStory, Path=IsChecked}" Value="True">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding ElementName=PART_GaButton, Path=Tag}" Value="False">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+
+                                                <StackPanel>
+                                                    <TextBlock Text="{DynamicResource LOCGameActivityTitle}" Margin="0,5,0,5" 
+                                                       Style="{DynamicResource BaseTextBlockStyle}" />
+                                                    <Separator Background="{DynamicResource PanelSeparatorBrush}" />
+
+                                                    <!-- GameActivity time chart -->
+                                                    <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,5,0,5"
+                                                            MinHeight="50" MaxHeight="300"
+                                                            Width="{Binding ElementName=PART_GameActivityContenerChartTime, Path=ActualWidth}" />
+
+                                                    <!-- GameActivity log chart -->
+                                                    <ContentControl x:Name="GameActivity_PluginChartLog" Margin="0,5,0,5"
+                                                            MinHeight="50" MaxHeight="300"
+                                                            Width="{Binding ElementName=PART_GameActivityContenerChartLog, Path=ActualWidth}" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <!-- ScreenshotsVisualizer list pictures -->
+                                            <StackPanel Name="PART_SsvContenerListPictures"
+                                                    Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=EnableIntegrationShowPictures}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="{x:Type StackPanel}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+
+                                                <StackPanel Visibility="{Binding ElementName=ScreenshotsVisualizer_PluginListScreenshots, Path=Content.Visibility}">
+                                                    <Separator Background="{DynamicResource PanelSeparatorBrush}" />
+                                                    <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshots" Margin="0,5,0,5"
+                                                                MinHeight="50" MaxHeight="300"
+                                                                Width="{Binding ElementName=PART_SsvContenerListPictures, Path=ActualWidth}" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel Name="PART_SsvContenerListPicturesVertical"
+                                                    Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=EnableIntegrationShowPicturesVertical}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="{x:Type StackPanel}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+
+                                                <StackPanel Visibility="{Binding ElementName=ScreenshotsVisualizer_PluginListScreenshotsVertical, Path=Content.Visibility}">
+                                                    <Separator Background="{DynamicResource PanelSeparatorBrush}" />
+                                                    <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" Margin="0,5,0,5"
+                                                                MinHeight="50" Height="300"
+                                                                Width="{Binding ElementName=PART_SsvContenerListPicturesVertical, Path=ActualWidth}" />
+                                                </StackPanel>
+                                            </StackPanel>
                                             
+
                                             <StackPanel Name="PART_ElemDescription" Margin="0,0,0,20">
                                                 <Grid HorizontalAlignment="Stretch" Margin="0,0,0,20" >
                                                     <Grid.ColumnDefinitions>

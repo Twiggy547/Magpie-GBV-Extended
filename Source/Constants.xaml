@@ -64,20 +64,9 @@
 
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource PopupBackgroundColor}" />
 
-    <!--
-        Some ideas for custom glyph colors:
-        For grey try: #A6A6A6,
-        for gold try #FFD768,
-        for salmon try #FF7A68,
-        for red try #E34141,
-        for blue try #62C3DF
-    -->
-
     <!--  Magpie-Specific Variables  -->
-
     <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">false</sys:Boolean>
     <sys:String x:Key="ExtraMetadataPath">..\..\..\..</sys:String>
-    <sys:String x:Key="AboutGameText">About the Game</sys:String>
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>
 
