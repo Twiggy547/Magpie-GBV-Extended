@@ -91,7 +91,7 @@
     <SolidColorBrush x:Key="FavoriteColorBrush" Color="{DynamicResource FavoriteColor}"/>
     <SolidColorBrush x:Key="TitlebarBrush" Color="{DynamicResource PopupBackgroundColor}" Opacity="0.7"/>
     <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{DynamicResource MainColorDark}"/>
-    <SolidColorBrush x:Key="DetailsButtonBrush" Color="{DynamicResource HoverColor}" Opacity=".7"/>
+    <SolidColorBrush x:Key="DetailsButtonBrush" Color="{DynamicResource HoverColor}" Opacity="0.7"/>
     <SolidColorBrush x:Key="ButtonBorderBrush" Color="{DynamicResource ButtonBackgroundColor}" Opacity="1"/>
     <SolidColorBrush x:Key="HoverBorderBrush" Color="{DynamicResource HoverColor}" Opacity="1"/>
     <SolidColorBrush x:Key="ButtonFocusBorderBrush" Color="{DynamicResource HoverColor}" Opacity="1"/>
@@ -108,6 +108,6 @@
     <SolidColorBrush x:Key="ContextBorderBrush" Color="{DynamicResource ContextButtonColor}" Opacity="1" />
     <SolidColorBrush x:Key="ClearFilterButtonBrush" Color="{DynamicResource ClearFilterButtonColor}" Opacity="0.7" />
     <SolidColorBrush x:Key="ClearFilterBorderBrush" Color="{DynamicResource ClearFilterButtonColor}" Opacity="1" />
-    <SolidColorBrush x:Key="CoverOverlayBackgroundBrush" Color="{DynamicResource PanelBackgroundColor}" Opacity=".5" />
+    <SolidColorBrush x:Key="CoverOverlayBackgroundBrush" Color="{DynamicResource PanelBackgroundColor}" Opacity="0.5" />
 
 </ResourceDictionary>
