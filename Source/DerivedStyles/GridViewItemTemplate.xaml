@@ -114,7 +114,7 @@
                 <ControlTemplate>
                     <Grid>
                         <Grid.ToolTip>
-                            <TextBlock Text="{Binding DisplayString, Mode=OneWay}"/>
+                            <TextBlock Text="{Binding DisplayString}"/>
                         </Grid.ToolTip>
                         <Border x:Name="IconBackground" CornerRadius="8" Background="{DynamicResource WindowBackgourndBrushHighlightHover}" Opacity="1" Visibility="Collapsed">
                         </Border>
