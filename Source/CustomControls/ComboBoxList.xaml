@@ -66,6 +66,14 @@
                 </Popup>
             </Grid>
         </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource HoverBrush}" TargetName="Root" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <ControlTemplate x:Key="FilterComboBoxListTemplate" TargetType="{x:Type ComboBoxListBase}">
@@ -73,7 +81,7 @@
                 CornerRadius="{DynamicResource ControlCornerRadius}"
                 Style="{DynamicResource HighlightBorder}"
                 Background="{TemplateBinding Background}"
-                x:Name="Root">
+                Cursor="Hand" x:Name="Root">
             <Grid>
                 <DockPanel>
                     <Viewbox Margin="0,0,2,0" DockPanel.Dock="Right">
@@ -145,6 +153,14 @@
                 </Popup>
             </Grid>
         </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource HoverBrush}" TargetName="Root" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style x:Key="ComboBoxListItemStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
         <Setter Property="Padding" Value="5" />

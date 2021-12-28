@@ -1,5 +1,18 @@
 AddonId: Twiggy547_Magpie_Extended
 Packages:
+  - Version: 2.0.0
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2021-12-27
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v2.0.0/Twiggy547_Magpie_Extended_2_0_0.pthm
+    Changelog:
+      - Details View
+      - Added achievements logos to games in list
+      - Added DuplicateHider
+      - Added LibraryManagement Feature List
+      - Grid View
+      - Added achievements logos to game covers
+      - Fixed DuplicateHider 
+      - Added LibraryManagement Feature List
   - Version: 1.9.9
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2021-12-17

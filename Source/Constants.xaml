@@ -69,12 +69,13 @@
     <sys:String x:Key="ExtraMetadataPath">..\..\..\..</sys:String>
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>
-
+    <Visibility x:Key="SuccessStoryGameIcon">Visible</Visibility>
     <sys:Double x:Key="ControlCornerRadiusDouble">0</sys:Double>
     <sys:Double x:Key="GroupSeparatorOpacity">1</sys:Double>
     <FontFamily x:Key="SymbolFont">seguisym.ttf#Segoe UI Symbol</FontFamily>
     <Visibility x:Key="TitleTextVisibility">Visible</Visibility>
     <sys:Double x:Key="DetailsViewPanelWidth">1280</sys:Double>
+    <sys:Double x:Key="DetailsPlayButtonWidth">160</sys:Double>
 
     <!--  Magpie-Specific Colors  -->
     <Color x:Key="ButtonBackgroundColor">#2b2b2b</Color>
@@ -83,7 +84,7 @@
     <Color x:Key="ContextButtonHighlightColor">#5C63BB</Color>
     <Color x:Key="ClearFilterButtonColor">#e34141</Color>
     <Color x:Key="PopupBackgroundTransparent">#00121212</Color>
-    <Color x:Key="FavoriteColor">#FFD768</Color>
+    <Color x:Key="FavoriteColor">#DAA520</Color>
 
     <SolidColorBrush x:Key="CoverHighlightBrush" Color="#10FFFFFF" />
 

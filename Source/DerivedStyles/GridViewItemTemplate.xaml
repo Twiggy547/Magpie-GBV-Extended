@@ -43,11 +43,35 @@
                                         </StackPanel>
                                     </Viewbox>
                                 </Border>
+                                <!-- SuccessStory CornerIcon -->
+                                <StackPanel Name="PART_CustomScButton" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+                                            Tag="{PluginSettings Plugin=SuccessStory, Path=EnableIntegrationButton}" Visibility="{DynamicResource SuccessStoryGameIcon}">
+                                    <StackPanel.Style>
+                                        <Style TargetType="{x:Type StackPanel}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </StackPanel.Style>
+
+                                    <TextBlock Text="&#x1F396;" FontFamily="{DynamicResource FontIcoFont}" 
+                                               Foreground="{DynamicResource FavoriteColorBrush}" FontSize="18"
+                                               Visibility="{Binding ElementName=SuccessStory_PluginButton, Path=Content.Visibility}"
+                                               VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="4,0,0,10" ToolTip="{DynamicResource LOCSuccessStoryAchievements}" />
+
+                                    <ContentControl x:Name="SuccessStory_PluginButton" Width="0" 
+                                                    Foreground="{DynamicResource TextBrush}" FontSize="16" 
+                                                    VerticalAlignment="Bottom" Margin="0" Visibility="Collapsed" />
+                                </StackPanel>
                                 <Border CornerRadius="8" 
                                         Background="{DynamicResource CoverHighlightBrush}" 
                                         HorizontalAlignment="Right" 
                                         VerticalAlignment="Top" Margin="5"
                                         Grid.Row="0">
+                                    <!-- DuplicateHider -->
                                     <ContentControl x:Name="DuplicateHider_SourceSelector" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible" MaxHeight="25"/>
                                 </Border>
                             </Grid>
@@ -87,7 +111,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <!-- DuplicateHider -->
     <Style
         x:Key="DuplicateHider_IconContentControlStyle"
         BasedOn="{StaticResource {x:Type ContentControl}}"

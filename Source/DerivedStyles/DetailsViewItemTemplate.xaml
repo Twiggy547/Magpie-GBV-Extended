@@ -20,7 +20,7 @@
                                            Height="{Settings DetailsViewListIconSize}"
                                            RenderOptions.BitmapScalingMode="Fant"
                                            DockPanel.Dock="Left" Margin="0,0,8,0" />
-                                    <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis"
+                                    <TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" 
                                                VerticalAlignment="Center" DockPanel.Dock="Left">
                                     </TextBlock>
                                 </DockPanel>
@@ -43,6 +43,29 @@
                                                     >
                                 </ContentControl>
                             </ContentControl>
+                            <!-- SuccessStory CornerIcon -->
+                            <StackPanel Name="PART_CustomScButton" Orientation="Horizontal" VerticalAlignment="Bottom" Panel.ZIndex="-1" HorizontalAlignment="Right" 
+                                            Tag="{PluginSettings Plugin=SuccessStory, Path=EnableIntegrationButton}" Margin="0" Visibility="{DynamicResource SuccessStoryGameIcon}">
+                                <StackPanel.Style>
+                                    <Style TargetType="{x:Type StackPanel}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+
+                                <TextBlock Text="&#xe820;" FontFamily="{DynamicResource FontIcoFont}" 
+                                               Foreground="{DynamicResource FavoriteColorBrush}" FontSize="13"
+                                               Visibility="{Binding ElementName=SuccessStory_PluginButton, Path=Content.Visibility}"
+                                               VerticalAlignment="Bottom" HorizontalAlignment="Right" ToolTip="{DynamicResource LOCSuccessStoryAchievements}" />
+
+                                <ContentControl x:Name="SuccessStory_PluginButton" Width="0" Content="&#x1F396;"
+                                                    Foreground="{DynamicResource TextBrush}" FontSize="12" 
+                                                    VerticalAlignment="Bottom" Visibility="Collapsed" />
+                            </StackPanel>
                         </Grid>
                     </Border>
                     <!--Fade effect. Remove or comment out <ControlTemplate.Triggers> section to deactivate animation.-->

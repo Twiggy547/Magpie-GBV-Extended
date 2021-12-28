@@ -331,6 +331,8 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
+                                <ContentControl Grid.Column="3" Grid.Row="2" x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" VerticalAlignment="Bottom"
+                                                                HorizontalAlignment="Right" Margin="0,0,5,5" />
                             </Grid>
                             <!-- Background Mode? -->
                             <Grid Grid.Row="1" Grid.RowSpan="2" Tag="{DynamicResource BGModeOn}">
@@ -574,7 +576,7 @@
                                 </StackPanel>
 
                                 <StackPanel x:Name="ControlButtons" Grid.Column="0" Margin="20,0,0,0" Orientation="Horizontal">
-                                    <Button Name="PART_ButtonPlayAction" Width="{Binding ElementName=PART_ImageCover, Path=ActualWidth}"
+                                    <Button Name="PART_ButtonPlayAction" Width="{DynamicResource DetailsPlayButtonWidth}"
                                             MinWidth="80" FontSize="{DynamicResource FontSizeLarger}" Style="{DynamicResource PlayButton}" />
                                     <Button Name="PART_ButtonContextAction" Width="{Binding ElementName=PART_ImageCover, Path=ActualWidth}"
                                             MinWidth="80" Style="{DynamicResource ContextButton}" FontSize="{DynamicResource FontSizeLarger}"/>
@@ -611,7 +613,7 @@
                                         </StackPanel.Style>
                                     </StackPanel>
                                 </StackPanel>
-                                <!-- HowLongToBeatButton -->
+                                <!-- HowLongToBeat Button -->
                                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
                                     <StackPanel Orientation="Horizontal">
                                         <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
@@ -628,7 +630,7 @@
                                                 </Style>
                                             </Grid.Style>
                                         </Grid>
-                                        <!-- SystemChecker -->
+                                        <!-- SystemChecker Button -->
                                         <Grid Tag="{PluginSettings Plugin=SystemChecker, Path=HasData}">
                                             <Button Name="PART_CustomSysCheckerButton" Content="&#x1F5B3;" ToolTip="SystemChecker"
                                                     FontFamily="{DynamicResource SymbolFont}"/>
@@ -643,7 +645,7 @@
                                                 </Style>
                                             </Grid.Style>
                                         </Grid>
-
+                                        
                                         <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
                                                 FontFamily="{DynamicResource SymbolFont}" Content="&#xE104;"/>
                                         <StackPanel.Style>
@@ -977,7 +979,6 @@
                                                         </Style.Triggers>
                                                     </Style>
                                                 </StackPanel.Style>
-
                                                 <StackPanel Visibility="{Binding ElementName=ScreenshotsVisualizer_PluginListScreenshotsVertical, Path=Content.Visibility}">
                                                     <Separator Background="{DynamicResource PanelSeparatorBrush}" />
                                                     <ContentControl x:Name="ScreenshotsVisualizer_PluginListScreenshotsVertical" Margin="0,5,0,5"

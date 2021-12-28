@@ -80,10 +80,11 @@
     <Style x:Key="TopPanelFilterToggle" TargetType="CheckBox">
         <Setter Property="MinWidth" Value="35" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Background" Value="#990a0e1e" />
+        <Setter Property="Background" Value="{DynamicResource PopupBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Margin" Value="10,6,0,6" />
+        <Setter Property="Margin" Value="0,6,5,6" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -125,6 +126,7 @@
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
         <Setter Property="Focusable" Value="False" />
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -190,8 +192,8 @@
                                         VerticalAlignment="Stretch" Margin="0,6,0,6"/>
 
                             <CheckBox x:Name="PART_ToggleFilter" ToolTip="{DynamicResource LOCFilters}"
-                                      Style="{DynamicResource TopPanelFilterToggle}"
-                                      DockPanel.Dock="Left" />
+                                      Style="{DynamicResource TopPanelFilterToggle}" 
+                                      DockPanel.Dock="Right" />
 
                             <CheckBox x:Name="PART_ToggleNotifications"
                                       Style="{DynamicResource TopPanelNotificationsToggle}"

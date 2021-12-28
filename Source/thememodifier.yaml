@@ -1,12 +1,14 @@
 Constants:
   - Magpie Specific
+  - SuccessStoryGameIcon: Achievement Icon on Game Items.
   - GridFavoriteHighlight: Favorites border glow in Grid view.
-  - FavoriteColorBrush: Color of favorites' border and star.
+  - FavoriteColor: Color of favorites' border and star.
   - UseAbsoluteExtraMetadataPath: Use Absolute ExtraMetadata Path.
   - ExtraMetadataPath: Absolute path to your Playnite folder.
   - BGModeOn: Background Mode
   - AboutGameText: Change About Game Text.
   - DetailsViewPanelWidth(720,1280): Width of main details view panel (BG Mode).
+  - DetailsPlayButtonWidth(80,200): Width of Play Button in Details View.
   - TitleTextVisibility: Visibility of Title shown if missing logo.
   - Magpie Specific Colors
   - TitlebarBrush: Titlebar background.
