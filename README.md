@@ -3,7 +3,7 @@
  Thank you Dan for this awesome Layout!
  
  ### Information and settings I use for addons and Playnite can be found in the wiki linked below.
- ## [Addon-Settings](https://github.com/Twiggy547/Magpie-GBV-Extended/wiki/Addon-Settings/)
+ ## [Playnite & Addon Settings](https://github.com/Twiggy547/Magpie-GBV-Extended/wiki/Addon-Settings/)
  
 ## Design Goals:
  * __Metro Style__ - Heavily influenced by the [Metro for Steam Skin](https://www.metroforsteam.com/) and Epic Launcher's clean design.
