@@ -12,8 +12,12 @@
  * __Rounded cover corners!__ I think they look nice.
  
 ## Supporting or Compatible Extensions for Playnite:
- * __[Extra Metadata Tools](https://playnite.link/forum/thread-575.html) by __[DarkLinkPower](https://github.com/darklinkpower)____ - Implementing flexible support for additional metadata media was a shared goal and this extension will facilitate acquiring or adapting logos and other custom media for use in this and other themes.
-  * __[DuplicateHider](https://playnite.link/forum/thread-308.html) by __[felixkmh](https://github.com/felixkmh)____ - Button on game covers that can show & switch between duplicates.
+### Authored by __[DarkLinkPower](https://github.com/darklinkpower)__
+ * __[Extra Metadata Tools](https://playnite.link/forum/thread-575.html)__ - Implementing flexible support for additional metadata media was a shared goal and this extension will facilitate acquiring or adapting logos and other custom media for use in this and other themes.
+ * __[NewsViewer](https://playnite.link/forum/thread-947.html)__ - Displays Steam News controlled by ThemeModifier.
+ * __[ReviewViewer](https://playnite.link/forum/thread-550.html)__ - Displays Steam reviews under the game description. 
+### Authored by __[Felixkmh](https://github.com/felixkmh)__
+ * __[DuplicateHider](https://playnite.link/forum/thread-308.html)__ - Button on game covers that can show & switch between duplicates.
 ### Authored by __[Lacro59](https://github.com/Lacro59)__
  * __[ThemeModifier](https://playnite.link/forum/thread-388.html)__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the ThemeModifier Button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file. (Currently trying to Fix)
   * __[HowLongToBeat](https://playnite.link/forum/thread-309.html)__ - Useful and, if custom theme integration is enabled, time-to-beat will appear with playtime, the button is appropriately themed, and it is located with the edit button.
