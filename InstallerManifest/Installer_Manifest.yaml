@@ -1,5 +1,18 @@
 AddonId: Twiggy547_Magpie_Extended
 Packages:
+  - Version: 2.0.1
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-01-02
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v2.0.1/Twiggy547_Magpie_Extended_2_0_1.pthm
+    Changelog:
+      - Details View
+      - Added ReviewViewer.
+      - Added NewsViewer.
+      - General
+      - Added Game description Title changer.
+      - Added ability to hide News, Reviews, and HLTB.
+      - Removed Color Constants till I can fix them.
+      - Removed Broken GameActivity implementation.
   - Version: 2.0.0
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2021-12-27
