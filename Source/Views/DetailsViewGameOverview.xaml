@@ -106,7 +106,7 @@
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
 
                         <TextBlock Name="LogoPath" Style="{DynamicResource ExtraMetadataLogoPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}" d:IsHidden="True"/>
+                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
                         <TextBlock Name="LogoLeftPath" Style="{DynamicResource ExtraMetadataLogoLeftPath}"
                                    Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
                         <TextBlock Name="LogoRightPath" Style="{DynamicResource ExtraMetadataLogoRightPath}"
@@ -645,7 +645,7 @@
                                                 </Style>
                                             </Grid.Style>
                                         </Grid>
-                                        
+
                                         <Button x:Name="PART_ButtonEditGame" Margin="0" ToolTip="{DynamicResource LOCEditGame}"
                                                 FontFamily="{DynamicResource SymbolFont}" Content="&#xE104;"/>
                                         <StackPanel.Style>
@@ -868,10 +868,39 @@
                                                     </Style.Triggers>
                                                 </Style>
                                             </StackPanel.Style>
-                                            <StackPanel Visibility="{Binding ElementName=HowLongToBeat_PluginProgressBar, Path=Content.Visibility}">
+                                            <StackPanel Visibility="{DynamicResource HowLongToBeatProgressBar}">
                                                 <ContentControl x:Name="HowLongToBeat_PluginProgressBar" Margin="0,0,0,5" Height="20"
                                                                 Width="{Binding ElementName=PART_HltbProgressBar, Path=ActualWidth}" />
                                             </StackPanel>
+                                        </StackPanel>
+                                        <!-- NewsViewer -->
+                                        <StackPanel Name="NewsViewer" Margin="0,0,0,10">
+                                            <StackPanel.Style>
+                                                <Style TargetType="{x:Type StackPanel}">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{PluginSettings FallbackValue=False, Plugin=NewsViewer, Path=ReviewsAvailable}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                            <Setter Property="Visibility" Value="{DynamicResource NewsViewerVisibility}" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </StackPanel.Style>
+                                            <Grid Visibility="{PluginStatus Plugin=NewsViewer_15e03ffe-90f6-4e8e-bd4d-94514777481d, Status=Installed}" HorizontalAlignment="Stretch" Margin="0,0,0,20" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Separator Margin="0" Background="{DynamicResource HoverBrush}" Grid.Column="0" />
+                                                <Label Grid.Column="1" Margin="0,0,0,0" MaxHeight="20" />
+                                                <TextBlock Text="News"  Margin="10,0,10,0"
+                                                                       Grid.Column="1" Foreground="{DynamicResource TextBrush}"
+                                                                       FontSize="{DynamicResource FontSizeLarger}" FontFamily="{DynamicResource FontFamily}"
+                                                                       Typography.Capitals="SmallCaps" FontWeight="SemiBold"  />
+                                                <Separator Margin="0,0,0,0" Background="{DynamicResource HoverBrush}" Grid.Column="3"/>
+                                            </Grid>
+                                            <ContentControl x:Name="NewsViewer_NewsViewerControl" />
                                         </StackPanel>
                                         <!-- SuccessStory Stack -->
                                         <StackPanel Margin="0" >
@@ -911,43 +940,8 @@
                                                 <ContentControl x:Name="SuccessStory_PluginList" />
                                                 <ContentControl x:Name="SuccessStory_PluginUserStats" />
                                             </StackPanel>
-                                            <!-- GameActivity elements -->
-                                            <StackPanel Margin="0">
-                                                <StackPanel.Style>
-                                                    <Style TargetType="{x:Type StackPanel}">
-                                                        <Setter Property="Visibility" Value="Collapsed" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding ElementName=PART_ToggleButtonGameActivity, Path=IsChecked}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding ElementName=PART_ToggleButtonSuccessStory, Path=IsChecked}" Value="True">
-                                                                <Setter Property="Visibility" Value="Collapsed" />
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding ElementName=PART_GaButton, Path=Tag}" Value="False">
-                                                                <Setter Property="Visibility" Value="Collapsed" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </StackPanel.Style>
-
-                                                <StackPanel>
-                                                    <TextBlock Text="{DynamicResource LOCGameActivityTitle}" Margin="0,5,0,5" 
-                                                       Style="{DynamicResource BaseTextBlockStyle}" />
-                                                    <Separator Background="{DynamicResource PanelSeparatorBrush}" />
-
-                                                    <!-- GameActivity time chart -->
-                                                    <ContentControl x:Name="GameActivity_PluginChartTime" Margin="0,5,0,5"
-                                                            MinHeight="50" MaxHeight="300"
-                                                            Width="{Binding ElementName=PART_GameActivityContenerChartTime, Path=ActualWidth}" />
-
-                                                    <!-- GameActivity log chart -->
-                                                    <ContentControl x:Name="GameActivity_PluginChartLog" Margin="0,5,0,5"
-                                                            MinHeight="50" MaxHeight="300"
-                                                            Width="{Binding ElementName=PART_GameActivityContenerChartLog, Path=ActualWidth}" />
-                                                </StackPanel>
-                                            </StackPanel>
                                             <!-- ScreenshotsVisualizer list pictures -->
-                                            <StackPanel Name="PART_SsvContenerListPictures"
+                                            <StackPanel Margin="0,0,0,10" Name="PART_SsvContenerListPictures"
                                                     Tag="{PluginSettings Plugin=ScreenshotsVisualizer, Path=EnableIntegrationShowPictures}">
                                                 <StackPanel.Style>
                                                     <Style TargetType="{x:Type StackPanel}">
@@ -986,8 +980,6 @@
                                                                 Width="{Binding ElementName=PART_SsvContenerListPicturesVertical, Path=ActualWidth}" />
                                                 </StackPanel>
                                             </StackPanel>
-                                            
-
                                             <StackPanel Name="PART_ElemDescription" Margin="0,0,0,20">
                                                 <Grid HorizontalAlignment="Stretch" Margin="0,0,0,20" >
                                                     <Grid.ColumnDefinitions>
@@ -1009,7 +1001,7 @@
                                                                     <Setter Property="Text" Value="{DynamicResource LOCGameDescriptionTitle}"/>
                                                                     <Style.Triggers>
                                                                         <Trigger Property="Tag" Value="Description">
-                                                                            <Setter Property="Text" Value="About the Game"/>
+                                                                            <Setter Property="Text" Value="{DynamicResource GameDescriptionLabel}"/>
                                                                         </Trigger>
                                                                     </Style.Triggers>
                                                                 </Style>
@@ -1044,6 +1036,35 @@
                                                      BorderThickness="0" Background="Transparent"
                                                      AcceptsReturn="True" TextWrapping="Wrap"
                                                      Margin="-1,5,-1,5" Padding="0"/>
+                                            </StackPanel>
+                                            <!-- ReviewViewer -->
+                                            <StackPanel Name="ReviewViewer" Margin="0,5,0,0" Visibility="{DynamicResource ReviewViewerVisibility}">
+                                                <StackPanel.Style>
+                                                    <Style TargetType="{x:Type StackPanel}">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{PluginSettings FallbackValue=False, Plugin=ReviewViewer, Path=ReviewsAvailable}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                                <Setter Property="Visibility" Value="{DynamicResource ReviewViewerVisibility}" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                                <Grid Visibility="{PluginStatus Plugin=Review_Viewer_ca24e37a-76d9-49bf-89ab-d3cba4a54bd1, Status=Installed}" HorizontalAlignment="Stretch" Margin="0,0,0,20" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Separator Margin="0" Background="{DynamicResource HoverBrush}" Grid.Column="0" />
+                                                    <Label Grid.Column="1" Margin="0,0,0,0" MaxHeight="20" />
+                                                    <TextBlock Text="Reviews"  Margin="10,0,10,0"
+                                                                       Grid.Column="1" Foreground="{DynamicResource TextBrush}"
+                                                                       FontSize="{DynamicResource FontSizeLarger}" FontFamily="{DynamicResource FontFamily}"
+                                                                       Typography.Capitals="SmallCaps" FontWeight="SemiBold"  />
+                                                    <Separator Margin="0,0,0,0" Background="{DynamicResource HoverBrush}" Grid.Column="3"/>
+                                                </Grid>
+                                                <ContentControl x:Name="ReviewViewer_ReviewsControl" />
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>

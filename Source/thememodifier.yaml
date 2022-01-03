@@ -1,23 +1,26 @@
 Constants:
   - Magpie Specific
+  - GameDescriptionLabel: Set Description Title.
+  - HowLongToBeatProgressBar: Show HLTB Progress Bar.
   - SuccessStoryGameIcon: Achievement Icon on Game Items.
+  - ReviewViewerVisibility: Visibility of ReviewViewer.
+  - NewsViewerVisibility: Visibility of NewsViewer.
   - GridFavoriteHighlight: Favorites border glow in Grid view.
-  - FavoriteColor: Color of favorites' border and star.
+  # - FavoriteColorBrush: Color of favorites' border and star.
   - UseAbsoluteExtraMetadataPath: Use Absolute ExtraMetadata Path.
   - ExtraMetadataPath: Absolute path to your Playnite folder.
   - BGModeOn: Background Mode
-  - AboutGameText: Change About Game Text.
   - DetailsViewPanelWidth(720,1280): Width of main details view panel (BG Mode).
   - DetailsPlayButtonWidth(80,200): Width of Play Button in Details View.
   - TitleTextVisibility: Visibility of Title shown if missing logo.
-  - Magpie Specific Colors
-  - TitlebarBrush: Titlebar background.
-  - PanelBackgroundBrush: Side panels.
-  - DetailsPanelBrush: Center info panel in details view.
-  - DetailsViewGroupTextBrush: Group titles in details view.
-  - ExpanderBackgroundBrush: Background for group expanders.
-  - DetailsButtonBrush: Buttons shown in details & grid item info panels.
-  - HoverBorderBrush: The above when hovered & play button normally.
-  - PlayButtonHighlightBrush: Play button when hovered.
-  - ContextButtonBrush: Install/contextual button when hovered.
-  - CoverHighlightBrush: Hovered covers in grid view.
+  # - Magpie Specific Colors
+  # - TitlebarBrush: Titlebar background.
+  # - PanelBackgroundBrush: Side panels.
+  # - DetailsPanelBrush: Center info panel in details view.
+  # - DetailsViewGroupTextBrush: Group titles in details view.
+  # - ExpanderBackgroundBrush: Background for group expanders.
+  # - DetailsButtonBrush: Buttons shown in details & grid item info panels.
+  # - HoverBorderBrush: The above when hovered & play button normally.
+  # - PlayButtonHighlightBrush: Play button when hovered.
+  # - ContextButtonBrush: Install/contextual button when hovered.
+  # - CoverHighlightBrush: Hovered covers in grid view.

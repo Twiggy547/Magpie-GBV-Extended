@@ -432,7 +432,7 @@
                                                                                 <Setter Property="Text" Value="{DynamicResource LOCGameDescriptionTitle}"/>
                                                                                 <Style.Triggers>
                                                                                     <Trigger Property="Tag" Value="Description">
-                                                                                        <Setter Property="Text" Value="About the Game"/>
+                                                                                        <Setter Property="Text" Value="{DynamicResource GameDescriptionLabel}"/>
                                                                                     </Trigger>
                                                                                 </Style.Triggers>
                                                                             </Style>
