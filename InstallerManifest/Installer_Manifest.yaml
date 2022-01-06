@@ -1,5 +1,11 @@
-AddonId: Twiggy547_Magpie_Extended
+AddonId: Twiggy547_Magpie_Extended 
 Packages:
+  - Version: 2.0.2
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-01-05
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v2.0.2/Twiggy547_Magpie_Extended_2_0_2.pthm
+    Changelog:
+      - Addons fixed in Details View.
   - Version: 2.0.1
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2022-01-02

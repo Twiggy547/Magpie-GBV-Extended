@@ -3,16 +3,17 @@ Constants:
   - GameDescriptionLabel: Set Description Title.
   - HowLongToBeatProgressBar: Show HLTB Progress Bar.
   - SuccessStoryGameIcon: Achievement Icon on Game Items.
-  - ReviewViewerVisibility: Visibility of ReviewViewer.
-  - NewsViewerVisibility: Visibility of NewsViewer.
+  - AchievementsInDetails: SuccessStory info in Details.
+  - NewsViewerVisibility: NewsViewer.
+  - ReviewViewerVisibility: ReviewViewer.
   - GridFavoriteHighlight: Favorites border glow in Grid view.
   # - FavoriteColorBrush: Color of favorites' border and star.
+  - TitleTextVisibility: Visibility of Title shown if missing logo.
   - UseAbsoluteExtraMetadataPath: Use Absolute ExtraMetadata Path.
   - ExtraMetadataPath: Absolute path to your Playnite folder.
   - BGModeOn: Background Mode
   - DetailsViewPanelWidth(720,1280): Width of main details view panel (BG Mode).
   - DetailsPlayButtonWidth(80,200): Width of Play Button in Details View.
-  - TitleTextVisibility: Visibility of Title shown if missing logo.
   # - Magpie Specific Colors
   # - TitlebarBrush: Titlebar background.
   # - PanelBackgroundBrush: Side panels.

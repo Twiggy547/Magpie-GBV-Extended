@@ -71,6 +71,7 @@
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>
     <Visibility x:Key="SuccessStoryGameIcon">Visible</Visibility>
+    <Visibility x:Key="AchievementsInDetails">Visible</Visibility>
     <Visibility x:Key="ReviewViewerVisibility">Collapsed</Visibility>
     <Visibility x:Key="NewsViewerVisibility">Collapsed</Visibility>
     <Visibility x:Key="HowLongToBeatProgressBar">Visible</Visibility>
