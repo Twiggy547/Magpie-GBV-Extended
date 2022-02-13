@@ -23,7 +23,7 @@
 ### Authored by __[Felixkmh](https://github.com/felixkmh)__
  * __[DuplicateHider](https://playnite.link/forum/thread-308.html)__ - Button on game covers that can show & switch between duplicates.
 ### Authored by __[Lacro59](https://github.com/Lacro59)__
- * __[ThemeModifier](https://playnite.link/forum/thread-388.html)__ - As mentioned above, many aspects of the theme have ben made available to be adjusted with this extension from the button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file. (Currently trying to Fix)
+ * __[ThemeModifier](https://playnite.link/forum/thread-388.html)__ - As mentioned above, many aspects of the theme have been made available to be adjusted with this extension from the button in the top bar or in ThemeModifiers Settings in Addons. Those who prefer can do the same by manually editing the Constants.xaml file. (Currently trying to Fix)
   * __[HowLongToBeat](https://playnite.link/forum/thread-309.html)__ - Useful and, if custom theme integration is enabled, time-to-beat will appear with playtime, the button is appropriately themed, and it is located with the edit button. Progress bar integration too!
   * __[GameActivity](https://playnite.link/forum/thread-264.html)__ - This plugin shows your game activity such as time played and has the ability to show average FPS, GPU/CPU/RAM usage, and temps. can use OpenHardwareMonitor and MSI Afterburner to log system temperature and FPS.
   * __[SuccessStory](https://playnite.link/forum/thread-275.html)__ - Another excellent plugin. Shows achievement progress for PC and RetroAchievement games. Including icons indicating if a game has achievements or not.
