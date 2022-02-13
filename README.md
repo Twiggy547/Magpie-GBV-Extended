@@ -12,8 +12,8 @@
 
 ## Outstanding Features:
  * __[ThemeModifier](https://playnite.link/forum/thread-388.html) by Lacro59 support.__ If you don't like my color scheme or want to adjust the transparency, you can do it yourself.
- * __Logo & Header Support__ without compromising existing metadata like icons. Thanks to a hack learned from joyrider3774, logos may optionally be added to your games.
- * __Rounded cover corners!__ I think they look nice.
+ * __Logo & Header Support__ 
+ * __Rounded cover corners!__
  
 ## Supporting or Compatible Extensions for Playnite:
 ### Authored by __[DarkLinkPower](https://github.com/darklinkpower)__
