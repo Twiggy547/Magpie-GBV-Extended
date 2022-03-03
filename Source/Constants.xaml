@@ -65,8 +65,9 @@
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource PopupBackgroundColor}" />
 
     <!--  Magpie-Specific Variables  -->
-    <sys:Boolean x:Key="UseAbsoluteExtraMetadataPath">false</sys:Boolean>
-    <sys:String x:Key="ExtraMetadataPath">..\..\..\..</sys:String>
+    
+    <Visibility x:Key="AllowUseOfLogos">Visible</Visibility>
+    <Visibility x:Key="TitleTextVisibility">Visible</Visibility>
     <sys:String x:Key="GameDescriptionLabel">About The Game</sys:String>
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>
@@ -78,7 +79,6 @@
     <sys:Double x:Key="ControlCornerRadiusDouble">0</sys:Double>
     <sys:Double x:Key="GroupSeparatorOpacity">1</sys:Double>
     <FontFamily x:Key="SymbolFont">seguisym.ttf#Segoe UI Symbol</FontFamily>
-    <Visibility x:Key="TitleTextVisibility">Visible</Visibility>
     <sys:Double x:Key="DetailsViewPanelWidth">1280</sys:Double>
     <sys:Double x:Key="DetailsPlayButtonWidth">160</sys:Double>
 

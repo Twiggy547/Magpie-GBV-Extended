@@ -44,58 +44,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <!-- ExtraMetadata -->
-    <Style x:Key="ExtraMetadataLogoPath" TargetType="TextBlock">
-        <Setter Property="Text">
-            <Setter.Value>
-                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                    <Binding Source="\ExtraMetadata\games\"/>
-                    <Binding Path="Game.Id"/>
-                    <Binding Source="\logo.png" />
-                </MultiBinding>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style x:Key="ExtraMetadataLogoLeftPath" TargetType="TextBlock">
-        <Setter Property="Text">
-            <Setter.Value>
-                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                    <Binding Source="\ExtraMetadata\games\"/>
-                    <Binding Path="Game.Id"/>
-                    <Binding Source="\logo-l.png" />
-                </MultiBinding>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style x:Key="ExtraMetadataLogoRightPath" TargetType="TextBlock">
-        <Setter Property="Text">
-            <Setter.Value>
-                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                    <Binding Source="\ExtraMetadata\games\"/>
-                    <Binding Path="Game.Id"/>
-                    <Binding Source="\logo-r.png" />
-                </MultiBinding>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style x:Key="ExtraMetadataHeaderPath" TargetType="TextBlock">
-        <Setter Property="Text">
-            <Setter.Value>
-                <MultiBinding StringFormat="{}{0}{1}{2}{3}">
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
-                    <Binding Source="\ExtraMetadata\games\"/>
-                    <Binding Path="Game.Id"/>
-                    <Binding Source="\header.jpg" />
-                </MultiBinding>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
     <Style TargetType="{x:Type DetailsViewGameOverview}">
         <Setter Property="Template">
@@ -104,15 +52,6 @@
                     <Grid d:DesignWidth="1520" d:DesignHeight="1080"
                         d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}"
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
-
-                        <TextBlock Name="LogoPath" Style="{DynamicResource ExtraMetadataLogoPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
-                        <TextBlock Name="LogoLeftPath" Style="{DynamicResource ExtraMetadataLogoLeftPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
-                        <TextBlock Name="LogoRightPath" Style="{DynamicResource ExtraMetadataLogoRightPath}"
-                                   Visibility="Collapsed" Tag="{DynamicResource ExtraMetadataPath}"/>
-                        <TextBlock Name="HeaderPath" Style="{DynamicResource ExtraMetadataHeaderPath}" 
-                                   Visibility="Collapsed"  Tag="{DynamicResource ExtraMetadataPath}"/>
 
                         <Grid>
                             <Grid.RowDefinitions>
@@ -133,7 +72,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <FadeImage x:Name="PART_ImageBackground" Tag="{DynamicResource BGModeOn}"
-                                       Grid.Row="0" HorizontalAlignment="Center" RenderOptions.BitmapScalingMode="Fant">
+                                       Grid.Row="0" HorizontalAlignment="Center" RenderOptions.BitmapScalingMode="Fant" d:IsHidden="True">
                                 <FadeImage.Resources>
                                     <Style TargetType="Image">
                                         <Style.Triggers>
@@ -200,107 +139,14 @@
                                     <RowDefinition Height="4*" />
                                     <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
-                                <FadeImage HorizontalAlignment="Center" VerticalAlignment="Center" Name="FadeLogoImage" AnimationEnabled="{Settings BackgroundImageAnimation}"
-                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Uniform"
-                                                           Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
-                                    <FadeImage.Style>
-                                        <Style TargetType="FadeImage">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
-                                                    <Setter Property="Source" Value="{x:Null}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </FadeImage.Style>
-                                </FadeImage>
-                                <FadeImage HorizontalAlignment="Left" VerticalAlignment="Center" Name="FadeLogoImageLeft" AnimationEnabled="{Settings BackgroundImageAnimation}"
-                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Uniform"
-                                                           Margin="50,0,-50,0" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
-                                    <FadeImage.Style>
-                                        <Style TargetType="FadeImage">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoLeftPath, Path=Text}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
-                                                    <Setter Property="Source" Value="{x:Null}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </FadeImage.Style>
-                                </FadeImage>
-                                <FadeImage HorizontalAlignment="Right" VerticalAlignment="Center" Name="FadeLogoImageRight" AnimationEnabled="{Settings BackgroundImageAnimation}"
-                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Uniform"
-                                                           Margin="-50,0,50,0" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
-                                    <FadeImage.Style>
-                                        <Style TargetType="FadeImage">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoRightPath, Path=Text}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
-                                                    <Setter Property="Source" Value="{x:Null}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </FadeImage.Style>
-                                </FadeImage>
-                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Name="LogoImage"
-                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
-                                                           Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
-                                    <Image.Style>
-                                        <Style TargetType="Image">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoPath, Path=Text}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                    <Setter Property="Source" Value="{x:Null}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Image.Style>
-                                </Image>
-                                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Name="LogoImageLeft"
-                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
-                                                           Margin="50,0,-50,0" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
-                                    <Image.Style>
-                                        <Style TargetType="Image">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoLeftPath, Path=Text}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                    <Setter Property="Source" Value="{x:Null}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Image.Style>
-                                </Image>
-                                <Image HorizontalAlignment="Right" VerticalAlignment="Center" Name="LogoImageRight"
-                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"
-                                                           Margin="-50,0,50,0" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}">
-                                    <Image.Style>
-                                        <Style TargetType="Image">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
-                                                    <Setter Property="Source" Value="{Binding ElementName=LogoRightPath, Path=Text}"/>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
-                                                    <Setter Property="Source" Value="{x:Null}"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Image.Style>
-                                </Image>
+                                <!-- ExtraMetadata Logos -->
+                                <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                           RenderOptions.BitmapScalingMode="Fant" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Visibility="{DynamicResource AllowUseOfLogos}" />
+                                
                                 <TextBlock Text="{Binding Game.DisplayName}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
-                                               FontSize="{DynamicResource FontSizeLargest}" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}"
                                                TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource TextBrush}"
                                                TextOptions.TextRenderingMode="Aliased" TextOptions.TextFormattingMode="Ideal"
-                                               TextAlignment="Center" Typography.Capitals="SmallCaps">
+                                               FontSize="{DynamicResource FontSizeLargest}" TextAlignment="Center" Typography.Capitals="SmallCaps" >
                                     <TextBlock.Effect>
                                         <DropShadowEffect ShadowDepth="0" Color="{DynamicResource PopupBackgroundColor}"
                                                               Opacity="1" BlurRadius="5"/>
@@ -309,30 +155,16 @@
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Visibility" Value="Collapsed"/>
                                             <Style.Triggers>
-                                                <MultiDataTrigger>
-                                                    <MultiDataTrigger.Conditions>
-                                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True"/>
-                                                        <Condition Binding="{Binding ElementName=FadeLogoImage, Path=ActualHeight}" Value="0" />
-                                                        <Condition Binding="{Binding ElementName=FadeLogoImageLeft, Path=ActualHeight}" Value="0" />
-                                                        <Condition Binding="{Binding ElementName=FadeLogoImageRight, Path=ActualHeight}" Value="0" />
-                                                    </MultiDataTrigger.Conditions>
-                                                    <Setter Property="Visibility" Value="{DynamicResource TitleTextVisibility}"/>
-                                                </MultiDataTrigger>
-                                                <MultiDataTrigger>
-                                                    <MultiDataTrigger.Conditions>
-                                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="False"/>
-                                                        <Condition Binding="{Binding ElementName=LogoImage, Path=Source}" Value="{x:Null}" />
-                                                        <Condition Binding="{Binding ElementName=LogoImageLeft, Path=Source}" Value="{x:Null}" />
-                                                        <Condition Binding="{Binding ElementName=LogoImageRight, Path=Source}" Value="{x:Null}" />
-                                                    </MultiDataTrigger.Conditions>
-                                                    <Setter Property="Visibility" Value="{DynamicResource TitleTextVisibility}"/>
-                                                </MultiDataTrigger>
+                                                <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable}" Value="False" >
+                                                   <Setter Property="Visibility" Value="{DynamicResource TitleTextVisibility}"/>
+                                                </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <ContentControl Grid.Column="3" Grid.Row="2" x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" VerticalAlignment="Bottom"
-                                                                HorizontalAlignment="Right" Margin="0,0,5,5" />
+                                <!-- LibraryManagement -->
+                                <ContentControl Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" x:Name="LibraryManagement_PluginFeaturesIconList" Height="30" VerticalAlignment="Bottom"
+                                                                HorizontalAlignment="Right" Padding="1" />
                             </Grid>
                             <!-- Background Mode? -->
                             <Grid Grid.Row="1" Grid.RowSpan="2" Tag="{DynamicResource BGModeOn}">
@@ -549,7 +381,7 @@
                                         </Label>
                                         <TextBlock Tag="{PluginSettings Plugin=SuccessStory, Path=Percent}">
                                             <Run Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked}"/>
-                                            <Run Text=" / "/>
+                                            <Run Text="/"/>
                                             <Run Text="{PluginSettings Plugin=SuccessStory, Path=Total}"/>
                                             <TextBlock.Style>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
@@ -575,7 +407,7 @@
                                     </StackPanel>
                                 </StackPanel>
 
-                                <StackPanel x:Name="ControlButtons" Grid.Column="0" Margin="20,0,0,0" Orientation="Horizontal">
+                                <StackPanel x:Name="ControlButtons" Grid.Column="0" Orientation="Horizontal">
                                     <Button Name="PART_ButtonPlayAction" Width="{DynamicResource DetailsPlayButtonWidth}"
                                             MinWidth="80" FontSize="{DynamicResource FontSizeLarger}" Style="{DynamicResource PlayButton}" />
                                     <Button Name="PART_ButtonContextAction" Width="{Binding ElementName=PART_ImageCover, Path=ActualWidth}"
@@ -614,7 +446,7 @@
                                     </StackPanel>
                                 </StackPanel>
                                 <!-- HowLongToBeat Button -->
-                                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
+                                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" >
                                     <StackPanel Orientation="Horizontal">
                                         <Grid Tag="{PluginSettings Plugin=HowLongToBeat, Path=HasData}">
                                             <Button Name="PART_CustomHowLongToBeatButton" Content="&#x23F1;" ToolTip="{DynamicResource LOCHowLongToBeat}"

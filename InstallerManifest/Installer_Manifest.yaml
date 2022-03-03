@@ -1,5 +1,14 @@
 AddonId: Twiggy547_Magpie_Extended 
 Packages:
+  - Version: 2.0.5
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-03-03
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v2.0.2/Twiggy547_Magpie_Extended_2_0_5.pthm
+    Changelog:
+      - Fixed ExtraMetadata Logo integration.
+      - Removed left space from Play button in Details View.
+      - Fixed? Achievements header issue.
+      - Trying to figure out how to fix titles without logos. 
   - Version: 2.0.2
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2022-01-05
