@@ -65,9 +65,8 @@
     <SolidColorBrush x:Key="WindowBackgourndBrush" Color="{DynamicResource PopupBackgroundColor}" />
 
     <!--  Magpie-Specific Variables  -->
-    
     <Visibility x:Key="AllowUseOfLogos">Visible</Visibility>
-    <Visibility x:Key="TitleTextVisibility">Visible</Visibility>
+    <sys:Boolean x:Key="TitleTextVisibility">true</sys:Boolean>
     <sys:String x:Key="GameDescriptionLabel">About The Game</sys:String>
     <sys:Boolean x:Key="BGModeOn">false</sys:Boolean>
     <sys:Boolean x:Key="GridFavoriteHighlight">true</sys:Boolean>

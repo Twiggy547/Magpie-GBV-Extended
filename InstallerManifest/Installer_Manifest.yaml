@@ -1,5 +1,14 @@
 AddonId: Twiggy547_Magpie_Extended 
 Packages:
+  - Version: 2.1.0
+    RequiredApiVersion: 2.1.0
+    ReleaseDate: 2022-03-04
+    PackageUrl: https://github.com/Twiggy547/Magpie-GBV-Extended/releases/download/v2.1.0/Twiggy547_Magpie_Extended_2_1_0.pthm
+    Changelog:
+      - Fixed ExtraMetadata Logo integration (For real this time).
+      - LibraryManagement display from last update corrected.
+      - SuccessStory Achievements header issue fixed.
+      - Text Titles display when Logos are not availble again. 
   - Version: 2.0.5
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2022-03-03
